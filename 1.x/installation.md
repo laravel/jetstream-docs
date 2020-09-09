@@ -56,10 +56,42 @@ During installation, Jetstream will scaffold your application's integration with
 
 In addition, your `tailwind.config.js` file has been pre-configured to support PurgeCSS with the relevant directories properly specified depending on your chosen Jetstream stack.
 
+Your application's `package.json` file is already scaffolded with NPM commands that you may use to compile your assets:
+
+```bash
+npm run dev
+
+npm run prod
+
+npm run watch
+```
+
 ### Livewire Components
 
 Jetstream uses a variety of Blade components, such as buttons and modals, to power the Livewire stack. If you are using the Livewire stack and you would like to publish these components after installing Jetstream, you may use the `vendor:publish` Artisan command:
 
 ```bash
 php artisan vendor:publish --tag=jetstream-views
+```
+
+## Application Logo
+
+As you may have noticed, the Jetstream logo is utilized on Jetstream's authentication pages as well as the top navigation bar. You may easily customize the logo by modifying two Jetstream components.
+
+### Livewire
+
+If you are using the Livewire stack, you should first publish the Livewire stack's Blade components:
+
+```bash
+php artisan vendor:publish --tag=jetstream-views
+```
+
+Next, you should customize the SVGs located in the `resources/views/vendor/jetstream/components/application-logo.blade.php` and `resources/views/vendor/jetstream/components/application-mark.blade.php` components.
+
+### Inertia
+
+If you are using the Inertia stack, you should customize the SVGs located in `resources/js/Jetstream/ApplicationLogo.vue` and `resources/js/Jetstream/ApplicationMark.vue`. After customizing these components, you should rebuild your assets:
+
+```bash
+npm run dev
 ```
