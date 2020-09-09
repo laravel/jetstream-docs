@@ -17,7 +17,7 @@ For more information on Sanctum and to learn how to issue requests to a Sanctum 
 
 ## Defining Permissions
 
-The permissions available to API tokens are defined using the `Jetstream::permissions` method within your application's `JetstreamServiceProvider`:
+The permissions available to API tokens are defined using the `Jetstream::permissions` method within your application's `JetstreamServiceProvider`. Permissions are just simple strings. Once they have been defined they may be assigned to an API token:
 
 ```php
 Jetstream::defaultApiTokenPermissions(['read']);
