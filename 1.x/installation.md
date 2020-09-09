@@ -36,7 +36,7 @@ npm install && npm run dev
 php artisan migrate
 ```
 
-## What is installed?
+## Jetstream Structure
 
 ### Views / Pages
 

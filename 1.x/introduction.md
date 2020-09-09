@@ -2,19 +2,13 @@
 
 [[toc]]
 
-## What is Jetstream?
-
 Laravel Jetstream is a beautifully designed application scaffolding for Laravel. Jetstream provides the perfect starting point for your next Laravel application and includes login, registration, email verification, two-factor authentication, session management, API support via [Laravel Sanctum](https://github.com/laravel/sanctum), and optional team management.
 
 Jetstream is designed using Tailwind CSS and offers your choice of [Livewire](./stacks/livewire.md) or [Inertia](./stacks/inertia.md) scaffolding.
 
 ![Screenshot of Laravel Jetstream](./../assets/img/preview.png)
 
-## Who is Jetstream for?
-
-Jetstream is a great starting point for new Laravel 8.x+ projects that deserve a head start. Since Jetstream scaffolds the repetitive, boilerplate aspects of writing a new application, you're able to dive head first into building your next dream project.
-
-## Which stack should I choose?
+## Available Stacks
 
 Laravel Jetstream offers your choice of two frontend stacks: [Livewire](https://laravel-livewire.com) and [Inertia.js](https://inertiajs.com). Each stack provides a productive, powerful starting point for building your application; however, the stack you choose will depend on your preferred templating language.
 
