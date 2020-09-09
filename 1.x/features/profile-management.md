@@ -33,3 +33,7 @@ The `updateProfilePhoto` method is the primary method used to store profile phot
 ### Disabling Profile Photos
 
 If you do not wish to allow users to upload custom profile photos, you may disable the feature in your `config/jetstream.php` configuration file. To disable the feature, simply comment out the feature listing from the `features` configuration item within this file.
+
+## Account Deletion
+
+The profile management screen also includes an action panel that allows the user to delete their application account. When the user chooses to delete their account, the `App\Actions\Jetstream\DeleteUser` action class will be invoked. You are free to customize your application's account deletion logic within this class.
