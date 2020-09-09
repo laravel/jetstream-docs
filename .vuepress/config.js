@@ -34,7 +34,7 @@ module.exports = {
         ],
 
         sidebar: {
-            '/1.0/': require('./1.0')
+            '/1.x/': require('./1.x')
         },
     },
 }
