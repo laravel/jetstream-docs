@@ -8,7 +8,7 @@ Laravel Jetstream's security features are accessed by the user using the top-rig
 
 ![Screenshot of Security](./../../assets/img/security.png)
 
-## Two-Factor Authentication
+### Two-Factor Authentication
 
 Laravel Jetstream automatically scaffolds two factor authentication support for all Jetstream applications. When a user enables two-factor authentication for their account, they should scan the given QR code using a free authenticator application such as Google Authenticator. In addition, they should store the listed recovery codes in a secure password manager such as 1Password.
 
