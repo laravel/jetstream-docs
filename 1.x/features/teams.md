@@ -117,7 +117,7 @@ When Jetstream is installed with team support, available API permissions are aut
 
 ### Authorization
 
-Of course, you will need a way to authorize that incoming requests initiated by a team member may actually be performed by that user. A user's team permissions may be inspected using the `hasTeamPermission` method available via the `Laravel\Jetstream\HasTeams` trait. Typically, you will execute calls to this method within your application's [authorization policies](https://laravel.com/docs/authorization):
+Of course, you will need a way to authorize that incoming requests initiated by a team member may actually be performed by that user. A user's team permissions may be inspected using the `hasTeamPermission` method available via the `Laravel\Jetstream\HasTeams` trait. There is never a need to inspect a user's role. You only need to inspect that the user has a given granular permission. Typically, you will execute calls to this method within your application's [authorization policies](https://laravel.com/docs/authorization):
 
 ```php
 if ($request->user()->hasTeamPermission($team, 'read')) {
