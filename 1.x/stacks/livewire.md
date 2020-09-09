@@ -2,13 +2,23 @@
 
 [[toc]]
 
-## Overview
+## Introduction
+
+Laravel Livewire is a library that makes it simple to build modern, reactive, dynamic interfaces using Laravel Blade as your templating language. This is a great stack to choose if you want to build an application that is dynamic and reactive but don't feel comfortable jumping into a full JavaScript framework like Vue.js.
+
+When using Livewire, your application's routes will respond with typical Blade templates. However, within these templates you may render Livewire components as necessary:
+
+```html
+<div class="mt-4">
+    @livewire('server-list')
+</div>
+```
 
 When using the Livewire stack, Jetstream has some unique features that you should be aware of. We will discuss each of these features below.
 
-### Components
+## Components
 
-While building the Jetstream Livewire stack, a variety of Blade components (buttons, panels, inputs, modals) were created to assist in creating UI consistency and ease of use. You are free to use or not use these components. However, if you would like to use them, you may publish them using the Artisan `vendor:publish` command:
+While building the Jetstream Livewire stack, a variety of Blade components (buttons, panels, inputs, modals) were created to assist in creating UI consistency and ease of use. You are free to use or not use these components. However, if you would like to use them, you should publish them using the Artisan `vendor:publish` command:
 
 ```bash
 php artisan vendor:publish --tag=jetstream-views
@@ -16,7 +26,7 @@ php artisan vendor:publish --tag=jetstream-views
 
 You may gain insight into how to use these components by reviewing their usage within Jetstream's existing views located within your `resources/views` directory.
 
-### Modals
+## Modals
 
 Most of the the Jetstream Livewire stack's components have no communication with your backend. However, the Livewire modal components included with Jetstream do interact with your Livewire backend to determine their open / closed state. In addition, Jetstream includes two types of modals: `dialog-modal` and `confirmation-modal`. The `confirmation-modal` may be used when confirming destructive actions such as deletions, while the `dialog-modal` is a more generic modal window that may be used at any time.
 
