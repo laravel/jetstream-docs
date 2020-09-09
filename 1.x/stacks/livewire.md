@@ -16,6 +16,11 @@ When using Livewire, your application's routes will respond with typical Blade t
 
 When using the Livewire stack, Jetstream has some unique features that you should be aware of. We will discuss each of these features below.
 
+:::tip Livewire Documentation
+
+Before using the Livewire stack, you are strongly encouraged to review the entire [Livewire documentation](https://laravel-livewire.com)
+:::
+
 ## Components
 
 While building the Jetstream Livewire stack, a variety of Blade components (buttons, panels, inputs, modals) were created to assist in creating UI consistency and ease of use. You are free to use or not use these components. However, if you would like to use them, you should publish them using the Artisan `vendor:publish` command:

@@ -24,7 +24,8 @@ Laravel Livewire is a library that makes it simple to build modern, reactive, dy
 
 When using Livewire, you may pick and choose which portions of your application will be a Livewire a component, while the remainder of your application can be rendered as the traditional Blade templates you are used to.
 
-::: tip
+:::tip Livewire Screencasts
+
 If you're new to Livewire, check out the [screencasts available on the Livewire website](https://laravel-livewire.com/screencasts/installation).
 :::
 

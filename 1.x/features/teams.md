@@ -111,6 +111,7 @@ Jetstream::role('editor', 'Editor', [
 ```
 
 :::tip Team API Support
+
 When Jetstream is installed with team support, available API permissions are automatically derived by combining all unique permissions available to roles. Therefore, a separate call to the `Jetstream::permissions` method is unnecessary.
 :::
 

@@ -28,7 +28,8 @@ This trait contains methods such as `updateProfilePhoto`, `getProfilePhotoUrlAtt
 
 The `updateProfilePhoto` method is the primary method used to store profile photos and is called by the `UpdateUserProfileInformation` action.
 
-::: tip
+:::tip Laravel Vapor
+
 By default, the `s3` disk will be used automatically when your application is running within [Laravel Vapor](https://vapor.laravel.com).
 :::
 

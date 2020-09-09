@@ -10,7 +10,8 @@ Jetstream includes first-party integration with [Laravel Sanctum](https://larave
 
 By default, the API token creation panel may be accessed using the "API" link of the top-right user profile dropdown menu. From this screen, users may create Sanctum API tokens that have various permissions.
 
-::: tip
+:::tip Sanctum Documentation
+
 For more information on Sanctum and to learn how to issue requests to a Sanctum authenticated API, please consult the official [Sanctum documentation](https://laravel.com/docs/sanctum).
 :::
 
