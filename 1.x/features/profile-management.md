@@ -10,7 +10,7 @@ Laravel Jetstream's profile management features are accessed by the user using t
 
 ## Views / Pages
 
-When using the Livewire stack, this view is displayed using the `resources/views/profile/update-profile-information-form.blade.php` Blade template. when using the Inertia stack, this view is displayed using the `resources/js/Pages/Profile/UpdateProfileInformationForm.vue` template.
+When using the Livewire stack, this view is displayed using the `resources/views/profile/update-profile-information-form.blade.php` Blade template. When using the Inertia stack, this view is displayed using the `resources/js/Pages/Profile/UpdateProfileInformationForm.vue` template.
 
 Each of these templates will receive the entire authenticated user object so that you can add additional fields to these forms as necessary. Any additional inputs added to the forms will be included in the `$input` array that is passed to your `UpdateUserProfileInformation` action.
 

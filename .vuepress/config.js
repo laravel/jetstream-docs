@@ -17,11 +17,11 @@ module.exports = {
 
     themeConfig: {
         logo: '/assets/img/logo.svg',
-        displayAllHeaders: false,
+        displayAllHeaders: true,
         activeHeaderLinks: false,
         searchPlaceholder: 'Press / to search',
         lastUpdated: 'Last Updated', // string | boolean
-        sidebarDepth: 0,
+        sidebarDepth: 1,
 
         repo: 'laravel/jetstream',
 
