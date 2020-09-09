@@ -11,6 +11,7 @@ module.exports = [
         collapsable: false,
         children: prefix('features', [
             'profile-management',
+            'security',
             'api',
             'teams',
         ]),
