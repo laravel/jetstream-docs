@@ -35,7 +35,15 @@ By default, the `s3` disk will be used automatically when your application is ru
 
 ### Disabling Profile Photos
 
-If you do not wish to allow users to upload custom profile photos, you may disable the feature in your `config/jetstream.php` configuration file. To disable the feature, simply comment out the feature listing from the `features` configuration item within this file.
+If you do not wish to allow users to upload custom profile photos, you may disable the feature in your `config/jetstream.php` configuration file. To disable the feature, simply comment out the feature entry from the `features` configuration item within this file:
+
+```php
+'features' => [
+    // Features::profilePhotos(),
+    Features::api(),
+    Features::teams(),
+],
+```
 
 ## Account Deletion
 
