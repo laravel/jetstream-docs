@@ -36,3 +36,11 @@ As you may have noticed, the `App\Actions\Fortify\PasswordValidationRules` trait
 // Require at least one numeric character...
 (new Password)->requireNumeric()
 ```
+
+## Email Verification
+
+Laravel Jetstream includes support for requiring that a newly registered user verify their email address. However, support for this feature is disabled by default. To enable this feature, you should uncomment the relevant entry in the `features` configuration item of the `config/fortify.php` configuration file.
+
+Next, you should ensure that your `App\Models\User` class implements the `MustVerifyEmail` interface. This interface is already imported into this model for you.
+
+Once these two setup steps have been completed, newly registered users will receive an email prompting them to verify their email address ownership.
