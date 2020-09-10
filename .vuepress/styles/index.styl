@@ -38,7 +38,11 @@ h2
   box-shadow 0 2px 4px 0 rgba(0, 0, 0, .05)
 
 .navbar .logo
-  // width 165.37px
+  max-width 100%
+
+@media (max-width 719px)
+    .navbar .logo
+        max-width: 90%;
 
 .navbar .site-name
   display: none
