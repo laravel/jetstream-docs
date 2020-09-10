@@ -8,6 +8,14 @@ Laravel Jetstream automatically scaffolds the login, two-factor login, registrat
 
 ![Screenshot of Authentication](./../../assets/img/authentication.png)
 
+## Laravel Fortify
+
+Under the hood, the authentication portions of Jetstream are powered by [Laravel Fortify](https://github.com/laravel/fortify), which is a front-end agnostic authentication backend for Laravel.
+
+When Jetstream is installed, the `config/fortify.php` configuration file is installed into your application as well. Within this configuration file, you can customize various aspects of Fortify's behavior, such as the authentication guard that should be used, where users should be redirected after authentication, and more.
+
+In addition, you can disable entire features of Fortify, such as the ability to update profile information or passwords.
+
 ## Views
 
 Regardless of the stack chosen for your application, authentication related views are stored in the `resources/views/auth` directory and are Blade templates. You are free to customize the styling of these templates based on your application's needs.
