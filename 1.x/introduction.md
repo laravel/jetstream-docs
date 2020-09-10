@@ -18,7 +18,7 @@ Laravel Jetstream offers your choice of two frontend stacks: [Livewire](https://
 
 Laravel Livewire is a library that makes it simple to build modern, reactive, dynamic interfaces using Laravel Blade as your templating language. This is a great stack to choose if you want to build an application that is dynamic and reactive but don't feel comfortable jumping into a full JavaScript framework like Vue.js.
 
-When using Livewire, you may pick and choose which portions of your application will be a Livewire a component, while the remainder of your application can be rendered as the traditional Blade templates you are used to.
+When using Livewire, you may pick and choose which portions of your application will be a Livewire component, while the remainder of your application can be rendered as the traditional Blade templates you are used to.
 
 :::tip Livewire Screencasts
 
