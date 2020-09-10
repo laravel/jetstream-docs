@@ -1,1 +1,4 @@
-<meta http-equiv="refresh" content="0;url=/1.x/introduction.html" />
+# Jetstream Documentation
+
+You can find the online version of the Jetstream documentation at [https://jetstream.laravel.com](https://jetstream.laravel.com/)
+
