@@ -20,7 +20,7 @@ module.exports = {
         displayAllHeaders: true,
         activeHeaderLinks: false,
         searchPlaceholder: 'Press / to search',
-        lastUpdated: 'Last Updated', // string | boolean
+        lastUpdated: false, // string | boolean
         sidebarDepth: 0,
 
         repo: 'laravel/jetstream',
@@ -30,7 +30,7 @@ module.exports = {
         editLinkText: 'Help us improve this page!',
 
         nav: [
-            { text: 'Home', link: 'https://jetstream.laravel.com' },
+            { text: 'Home', link: '/', target: '_self' },
         ],
 
         sidebar: {
