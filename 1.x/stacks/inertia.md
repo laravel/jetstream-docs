@@ -8,7 +8,7 @@ The Inertia.js stack provided by Jetstream uses [Vue.js](https://vuejs.org) as i
 
 In other words, this stack gives you the full power of Vue.js without the complexity of client-side routing. You get to use the standard Laravel router that you are used to. The Inertia stack is a great choice if you are comfortable with and enjoy using Vue.js as your templating language.
 
-When using Livewire, your application's routes will respond by rendering an Inertia "page". This looks very similar to returning a Laravel Blade view:
+When using Inertia, your application's routes will respond by rendering an Inertia "page". This looks very similar to returning a Laravel Blade view:
 
 ```php
 use Illuminate\Http\Request;
