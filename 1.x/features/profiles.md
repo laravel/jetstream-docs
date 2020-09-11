@@ -1,4 +1,4 @@
-# Profile Management
+# Profiles
 
 [[toc]]
 

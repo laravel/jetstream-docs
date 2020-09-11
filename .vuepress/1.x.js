@@ -10,8 +10,8 @@ module.exports = [
         title: "Features",
         collapsable: false,
         children: prefix('features', [
-            'authentication',
-            'profile-management',
+            'access',
+            'profiles',
             'security',
             'api',
             'teams',
