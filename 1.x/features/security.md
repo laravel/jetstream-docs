@@ -62,7 +62,7 @@ While building your application, you may occasionally have actions that should r
 
 ### Livewire
 
-If you are using the Livewire stack, your Livewire component that contains the password confirmed action should use the `Laravel\Jetstream\ConfirmsPasswords` trait. Next, you should wrap the action you wish to confirm using the `confirms-password` Blade component. `confirms-password` wrapper should contain `wire:then` directive that specifies which Livewire action should be run once the user's password has been confirmed. Once the user has confirmed their password, they will not be required to re-enter their password for 15 minutes:
+If you are using the Livewire stack, your Livewire component that contains the password confirmed action should use the `Laravel\Jetstream\ConfirmsPasswords` trait. Next, you should wrap the action you wish to confirm using the `confirms-password` Blade component. `confirms-password` wrapper should contain `wire:then` directive that specifies which Livewire action should be run once the user's password has been confirmed. Once the user has confirmed their password, they will not be required to re-enter until the number of seconds defined by the `auth.password_timeout` configuration option have elapsed:
 
 ```html
 <x-jet-confirms-password wire:then="enableAdminMode">
@@ -90,7 +90,7 @@ public function enableAdminMode()
 
 ### Inertia
 
-If you are using the Inertia stack, you should wrap the action you wish to confirm using the `ConfirmsPassword` Vue component provided by Jetstream. This wrapper component should listen for the `@confirmed` event in order to trigger the method that should be called once the user's password is confirmed. Once the user has confirmed their password, they will not be required to re-enter their password for 15 minutes. To get started, import and register the component within your page:
+If you are using the Inertia stack, you should wrap the action you wish to confirm using the `ConfirmsPassword` Vue component provided by Jetstream. This wrapper component should listen for the `@confirmed` event in order to trigger the method that should be called once the user's password is confirmed. Once the user has confirmed their password, they will not be required to re-enter until the number of seconds defined by the `auth.password_timeout` configuration option have elapsed:
 
 ```js
 import JetConfirmsPassword from './Jetstream/ConfirmsPassword'
