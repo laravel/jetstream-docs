@@ -20,6 +20,22 @@ In addition, you can disable entire features of Fortify, such as the ability to 
 
 Regardless of the stack chosen for your application, authentication related views are stored in the `resources/views/auth` directory and are Blade templates. You are free to customize the styling of these templates based on your application's needs.
 
+### Customizing View Rendering
+
+Sometimes you may wish to customize how a particular authentication view is rendered. All of the authentication view's rendering logic may be customized using the appropriate methods available via the `Laravel\Fortify\Fortify` class. Typically, you should call this method from the `boot` method of your `JetstreamServiceProvider`:
+
+```php
+use Laravel\Fortify\Fortify;
+
+Fortify::loginView(function () {
+    return view('auth.login');
+});
+
+Fortify::registerView(function () {
+    return view('auth.login');
+});
+```
+
 ## Actions
 
 As typical of most Jetstream features, the logic executed to satisfy authentication requests can be found in an action class within your application.
@@ -43,6 +59,54 @@ As you may have noticed, the `App\Actions\Fortify\PasswordValidationRules` trait
 
 // Require at least one numeric character...
 (new Password)->requireNumeric()
+```
+
+## Customizing The Authentication Process
+
+### Customizing User Authentication
+
+Sometimes, you may wish to have full customization over how login credentials are authenticated and users are retrieved. Thankfully, Jetstream allows you to easily accomplish this using the `Fortify::authenticateUsing` method.
+
+This method accepts a Closure which that receives the incoming HTTP request. The Closure is responsible for validating the login credentials attached to the request and returning the associated user instance. If the credentials are invalid or no user can be found, `null` or `false` should be returned by the Closure. Typically, this method should be called from the `boot` method of your `JetstreamServiceProvider`:
+
+```php
+use App\Models\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Laravel\Fortify\Fortify;
+
+Fortify::authenticateUsing(function (Request $request) {
+    $user = User::where('email', $request->email)->first();
+
+    if ($user &&
+        Hash::check($request->password, $user->password)) {
+        return $user;
+    }
+})
+```
+
+### Customizing The Authentication Pipeline
+
+Jetstream (via Fortify) authenticates login requests through a pipeline of invokable classes. If necessary, you may define a custom pipeline of classes that login requests should be piped through. Each class should have an `__invoke` method which receives the incoming `Illuminate\Http\Request` instance and, like middleware, a `$next` variable.
+
+To define your custom pipeline, you may use the `Fortify::authenticateThrough` method. This method accepts a Closure which should return the array of classes to pipe the login request through. Typically, this method should be called from the `boot` method of your `JetstreamServiceProvider`:
+
+```php
+use Laravel\Fortify\Actions\AttemptToAuthenticate;
+use Laravel\Fortify\Actions\EnsureLoginIsNotThrottled;
+use Laravel\Fortify\Actions\PrepareAuthenticatedSession;
+use Laravel\Fortify\Actions\RedirectIfTwoFactorAuthenticatable;
+use Laravel\Fortify\Fortify;
+use Illuminate\Http\Request
+
+Fortify::authenticateThrough(function (Request $request) {
+    return array_filter([
+            config('fortify.limiters.login') ? null : EnsureLoginIsNotThrottled::class,
+            RedirectIfTwoFactorAuthenticatable::class,
+            AttemptToAuthenticate::class,
+            PrepareAuthenticatedSession::class,
+    ]);
+});
 ```
 
 ## Email Verification

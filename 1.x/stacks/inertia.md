@@ -43,17 +43,22 @@ You may gain insight into how to use these components by reviewing their usage w
 
 ## Custom Rendering
 
-Some of Jetstream's Inertia pages, such as `Teams/Show` and `Profile/Show` are rendered from within Jetstream itself. However, you may need to pass additional data to these pages while building your application. Therefore, Jetstream allows you to customize the data / props passed to these pages using the `Jetstream::inertia()->renderUsing` method. This method accepts the name of the page you wish to customize and a Closure. The Closure will receive the incoming HTTP request and an array of the default data that would typically be sent to the page. You are welcome to customize or add new array elements to the data as necessary:
+Some of Jetstream's Inertia pages, such as `Teams/Show` and `Profile/Show` are rendered from within Jetstream itself. However, you may need to pass additional data to these pages while building your application. Therefore, Jetstream allows you to customize the data / props passed to these pages using the `Jetstream::inertia()->renderUsing` method.
+
+This method accepts the name of the page you wish to customize and a Closure. The Closure will receive the incoming HTTP request and an array of the default data that would typically be sent to the page. You are welcome to customize or add new array elements to the data as necessary. Typically, you should call this method from within the `boot` method of your `JetstreamServiceProvider`:
 
 ```php
 use Illuminate\Http\Request;
 use Laravel\Jetstream\Jetstream;
 
-Jetstream::inertia()->renderUsing('Profile/Show', function (Request $request, array $data) {
-    return array_merge($data, [
-        // Custom data...
-    ]);
-});
+Jetstream::inertia()->renderUsing(
+    'Profile/Show',
+    function (Request $request, array $data) {
+        return array_merge($data, [
+            // Custom data...
+        ]);
+    }
+);
 ```
 
 ## Form / Validation Helpers
