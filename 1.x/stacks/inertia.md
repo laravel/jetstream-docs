@@ -41,6 +41,21 @@ While building the Jetstream Inertia stack, a variety of Vue components (buttons
 
 You may gain insight into how to use these components by reviewing their usage within Jetstream's existing pages located within your `resources/js/Pages` directory.
 
+## Custom Rendering
+
+Some of Jetstream's Inertia pages, such as `Teams/Show` and `Profile/Show` are rendered from within Jetstream itself. However, you may need to pass additional data to these pages while building your application. Therefore, Jetstream allows you to customize the data / props passed to these pages using the `Jetstream::inertia()->renderUsing` method. This method accepts the name of the page you wish to customize and a Closure. The Closure will receive the incoming HTTP request and an array of the default data that would typically be sent to the page. You are welcome to customize or add new array elements to the data as necessary:
+
+```php
+use Illuminate\Http\Request;
+use Laravel\Jetstream\Jetstream;
+
+Jetstream::inertia()->renderUsing('Profile/Show', function (Request $request, array $data) {
+    return array_merge($data, [
+        // Custom data...
+    ]);
+});
+```
+
 ## Form / Validation Helpers
 
 In order to make working with forms and validation errors more convenient, a [laravel-jetstream](https://github.com/laravel/jetstream-js) NPM package has been created. This package is automatically installed when using the Jetstream Inertia stack.
