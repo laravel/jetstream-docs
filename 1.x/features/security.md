@@ -55,3 +55,81 @@ As you may have noticed, the `App\Actions\Fortify\PasswordValidationRules` trait
 // Require at least one numeric character...
 (new Password)->requireNumeric()
 ```
+
+## Password Confirmation
+
+While building your application, you may occasionally have actions that should require the user to confirm their password before the action is performed. Thankfully, Jetstream has built-in functionality to make this a breeze.
+
+### Livewire
+
+If you are using the Livewire stack, your Livewire component that contains the password confirmed action should use the `Laravel\Jetstream\ConfirmsPasswords` trait. Next, you should wrap the action you wish to confirm using the `confirms-password` Blade component. `confirms-password` wrapper should contain `wire:then` directive that specifies which Livewire action should be run once the user's password has been confirmed. Once the user has confirmed their password, they will not be required to re-enter their password for 15 minutes:
+
+```html
+<x-jet-confirms-password wire:then="enableAdminMode">
+    <x-jet-button type="button" wire:loading.attr="disabled">
+        {{ __('Enable') }}
+    </x-jet-button>
+</x-jet-confirms-password>
+```
+
+Next, within your Livewire action that is being confirmed, you should call the `ensurePasswordIsConfirmed` method. This should be done at the very beginning of the relevant action method:
+
+```php
+/**
+ * Enable administration mode for user.
+ *
+ * @return void
+ */
+public function enableAdminMode()
+{
+    $this->ensurePasswordIsConfirmed();
+
+    // ...
+}
+```
+
+### Inertia
+
+If you are using the Inertia stack, you should wrap the action you wish to confirm using the `ConfirmsPassword` Vue component provided by Jetstream. This wrapper component should listen for the `@confirmed` event in order to trigger the method that should be called once the user's password is confirmed. Once the user has confirmed their password, they will not be required to re-enter their password for 15 minutes. To get started, import and register the component within your page:
+
+```js
+import JetConfirmsPassword from './Jetstream/ConfirmsPassword'
+
+export default {
+    components: {
+        JetConfirmsPassword,
+        // ...
+    },
+}
+```
+
+Next, wrap the component around the element that triggers the action that should be confirmed:
+
+```html
+<jet-confirms-password @confirmed="enableAdminMode">
+    <jet-button type="button" :class="{ 'opacity-25': enabling }" :disabled="enabling">
+        Enable
+    </jet-button>
+</jet-confirms-password>
+```
+
+Finally, you should ensure that the route that performs the confirmed action is assigned the `password.confirm` middleware. This middleware is included with the default installation of Laravel:
+
+```php
+Route::post('/admin-mode', function () {
+    // ...
+})->middleware(['password.confirm']);
+```
+
+### Customizing How Passwords Are Confirmed
+
+Sometimes, you may wish to customize how the user's password is validated during confirmation. To do so, you may use the `Fortify::confirmPasswordsUsing` method. This method accepts a Closure which receives the authenticated user instance and the `password` input value of the request. The Closure should return `true` if the password is valid for the given user. Typically, this method should be called from the `boot` method of your `JetstreamServiceProvider`:
+
+```php
+use Illuminate\Support\Facades\Hash;
+use Laravel\Fortify\Fortify;
+
+Fortify::confirmPasswordsUsing(function ($user, string $password) {
+    return Hash::check($password, $user->password);
+});
+```
