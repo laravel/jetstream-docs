@@ -32,7 +32,7 @@ Fortify::loginView(function () {
 });
 
 Fortify::registerView(function () {
-    return view('auth.login');
+    return view('auth.register');
 });
 ```
 
