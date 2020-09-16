@@ -90,7 +90,7 @@ Next, you should customize the SVGs located in the `resources/views/vendor/jetst
 
 ### Inertia
 
-If you are using the Inertia stack, you should first publish the Livewire stack's Blade components. These components are used by the authentication templates:
+If you are using the Inertia stack, you should first publish Jetstream's Blade components. These components are used by the authentication templates:
 
 ```bash
 php artisan vendor:publish --tag=jetstream-views
