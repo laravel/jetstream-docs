@@ -86,7 +86,7 @@ If you are using the Livewire stack, you should first publish the Livewire stack
 php artisan vendor:publish --tag=jetstream-views
 ```
 
-Next, you should customize the SVGs located in the `resources/views/vendor/jetstream/components/application-logo.blade.php` and `resources/views/vendor/jetstream/components/application-mark.blade.php` components.
+Next, you should customize the SVGs located in the `resources/views/vendor/jetstream/components/application-logo.blade.php`, `resources/views/vendor/jetstream/components/authentication-card-logo.blade.php` and `resources/views/vendor/jetstream/components/application-mark.blade.php` components.
 
 ### Inertia
 
