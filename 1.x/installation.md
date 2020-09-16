@@ -86,11 +86,17 @@ If you are using the Livewire stack, you should first publish the Livewire stack
 php artisan vendor:publish --tag=jetstream-views
 ```
 
-Next, you should customize the SVGs located in the `resources/views/vendor/jetstream/components/application-logo.blade.php` and `resources/views/vendor/jetstream/components/application-mark.blade.php` components.
+Next, you should customize the SVGs located in the `resources/views/vendor/jetstream/components/application-logo.blade.php`, `resources/views/vendor/jetstream/components/authentication-card-logo.blade.php`, and `resources/views/vendor/jetstream/components/application-mark.blade.php` components.
 
 ### Inertia
 
-If you are using the Inertia stack, you should customize the SVGs located in `resources/js/Jetstream/ApplicationLogo.vue` and `resources/js/Jetstream/ApplicationMark.vue`. After customizing these components, you should rebuild your assets:
+If you are using the Inertia stack, you should first publish Jetstream's Blade components. These components are used by the authentication templates:
+
+```bash
+php artisan vendor:publish --tag=jetstream-views
+```
+
+Next, you should customize the SVGs located in `resources/views/vendor/jetstream/components/authentication-card-logo.blade.php`, `resources/js/Jetstream/ApplicationLogo.vue`, and `resources/js/Jetstream/ApplicationMark.vue`. After customizing these components, you should rebuild your assets:
 
 ```bash
 npm run dev
