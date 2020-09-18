@@ -26,19 +26,21 @@ composer require laravel/jetstream
 
 If you choose to install Jetstream through Composer, you should run the `jetstream:install` Artisan command. This command accepts the name of the stack you prefer (livewire or inertia). You are highly encouraged to read through the entire documentation of [Livewire](https://laravel-livewire.com) or [Inertia](https://inertiajs.com) before beginning your Jetstream project. In addition, you may use the `--teams` switch to enable team support:
 
-#### Install jetstream with Livewire
+#### Install Jetstream With Livewire
 
 ```bash
 php artisan jetstream:install livewire --teams
 ```
 
-#### Or install jetstream with Inertia
+#### Or, Install Jetstream With Inertia
 
 ```bash
 php artisan jetstream:install inertia --teams
 ```
 
-#### finalize installation
+#### Finalizing The Installation
+
+After installing Jetstream, you should install and build your NPM dependencies and migrate your database:
 
 ```bash
 npm install && npm run dev
