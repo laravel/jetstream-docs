@@ -89,7 +89,7 @@ this.form.post('/user/profile-information', {
 })
 ```
 
-Form error messages may be access using the `form.error` method. This method will return the first available error message for the given field:
+Form error messages may be accessed using the `form.error` method. This method will return the first available error message for the given field:
 
 ```html
 <jet-input-error :message="form.error('email')" class="mt-2" />
