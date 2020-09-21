@@ -89,6 +89,12 @@ Team member addition logic may be customized by modifying the `App\Actions\Jetst
 
 This action is responsible for validating that the user can actually be added to the team and then adding the user to the team. You are free to customize this action based on the needs of your particular application.
 
+You can retrieve all users for a specific team with the `allUsers` method:
+
+```php
+$users = $team->allUsers();
+```
+
 ### Roles / Permissions
 
 Each team member added to a team may be assigned a given role, and each role is assigned a set of permissions. Role permissions are defined in your application's `JetstreamServiceProvider` using the `Jetstream::role` method. This method accepts a "slug" for the role, a user-friendly role name, the role permissions, and a description of the role. This information will be used to display the role within the team member management view:
