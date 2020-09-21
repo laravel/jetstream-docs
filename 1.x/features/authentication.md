@@ -67,7 +67,7 @@ As you may have noticed, the `App\Actions\Fortify\PasswordValidationRules` trait
 
 Sometimes, you may wish to have full customization over how login credentials are authenticated and users are retrieved. Thankfully, Jetstream allows you to easily accomplish this using the `Fortify::authenticateUsing` method.
 
-This method accepts a Closure which that receives the incoming HTTP request. The Closure is responsible for validating the login credentials attached to the request and returning the associated user instance. If the credentials are invalid or no user can be found, `null` or `false` should be returned by the Closure. Typically, this method should be called from the `boot` method of your `JetstreamServiceProvider`:
+This method accepts a Closure that receives the incoming HTTP request. The Closure is responsible for validating the login credentials attached to the request and returning the associated user instance. If the credentials are invalid or no user can be found, `null` or `false` should be returned by the Closure. Typically, this method should be called from the `boot` method of your `JetstreamServiceProvider`:
 
 ```php
 use App\Models\User;
