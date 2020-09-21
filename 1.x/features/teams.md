@@ -75,6 +75,30 @@ A user may switch their current team via the user profile dropdown menu availabl
 
 ![Screenshot of Team Switcher](./../../assets/img/team-switcher.png)
 
+### The Team Object
+
+The team object that is accessed via `$user->currentTeam` or via Eloquent queries provides a variety of useful methods for inspecting the team's attributes and relationships:
+
+```php
+// Access the team's owner...
+$team->owner : \App\Models\User
+
+// Get all of the team's users, including the owner...
+$team->allUsers() : Illuminate\Database\Eloquent\Collection
+
+// Get all of the team's users, excluding the owner...
+$team->users : Illuminate\Database\Eloquent\Collection
+
+// Determine if the given user is a team member...
+$team->hasUser($user) : bool
+
+// Determine if the team has a member with the given email address...
+$team->hasUserWithEmail($emailAddress) : bool
+
+// Determine if the given user is a team member with the given permission...
+$team->userHasPermission($user, $permission) : bool
+```
+
 ## Member Management
 
 Team members may be added and removed via Jetstream's "Team Settings" view. The backend logic that manages these actions may be customized by modifying the relevant actions, such as the `App\Actions\Jetstream\AddTeamMember` class.
