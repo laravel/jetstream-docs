@@ -59,6 +59,9 @@ As you may have noticed, the `App\Actions\Fortify\PasswordValidationRules` trait
 
 // Require at least one numeric character...
 (new Password)->requireNumeric()
+
+// Require at least one special character...
+(new Password)->requireSpecialCharacter()
 ```
 
 ## Customizing The Authentication Process
