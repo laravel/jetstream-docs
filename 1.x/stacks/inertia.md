@@ -89,6 +89,38 @@ this.form.post('/user/profile-information', {
 })
 ```
 
+To validate the form on back-end, you should use `Validator`
+
+```php
+
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Task;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+
+class TaskController extends Controller
+{
+   public function store(Request $request)
+    {
+ 
+        Validator::make($request->all(), [
+            'title' => 'required|max:200',
+            'description' => 'required|min:50',
+        ])->validateWithBag('createTask');
+
+        $task = new Task();
+        $task->title = $request->title;
+        $task->description = $request->description;
+        $task->owner = Auth::user()->id;
+        $task->save();
+
+        return back();
+    }
+```
+
 Form error messages may be accessed using the `form.error` method. This method will return the first available error message for the given field:
 
 ```html
