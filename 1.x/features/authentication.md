@@ -100,7 +100,7 @@ use Laravel\Fortify\Actions\EnsureLoginIsNotThrottled;
 use Laravel\Fortify\Actions\PrepareAuthenticatedSession;
 use Laravel\Fortify\Actions\RedirectIfTwoFactorAuthenticatable;
 use Laravel\Fortify\Fortify;
-use Illuminate\Http\Request
+use Illuminate\Http\Request;
 
 Fortify::authenticateThrough(function (Request $request) {
     return array_filter([
