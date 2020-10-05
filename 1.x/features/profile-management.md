@@ -22,6 +22,20 @@ Therefore, any customizations you wish to make to this logic should be made in t
 
 ## Profile Photos
 
+### Enabling Profile Photos
+
+If you wish to allow users to upload custom profile photos, you must enable the feature in your `config/jetstream.php` configuration file. To enable the feature, simply uncomment the feature entry from the `features` configuration item within this file:
+
+```php
+'features' => [
+    Features::profilePhotos(),
+    Features::api(),
+    Features::teams(),
+],
+```
+
+### Managing Profile Photos
+
 By default, Jetstream allows users to upload custom profile photos. This functionality is supported by the `Laravel\Jetstream\HasProfilePhoto` trait that is automatically attached to your `App\Models\User` class during Jetstream's installation.
 
 This trait contains methods such as `updateProfilePhoto`, `getProfilePhotoUrlAttribute`, `defaultProfilePhotoUrl`, and `profilePhotoDisk` which may all be overwritten by your own `App\Models\User` class if you need to customize their behavior. You are encouraged to read through the source code of this trait so that you have a full understanding of the features it is providing to your application.
@@ -32,18 +46,6 @@ The `updateProfilePhoto` method is the primary method used to store profile phot
 
 By default, the `s3` disk will be used automatically when your application is running within [Laravel Vapor](https://vapor.laravel.com).
 :::
-
-### Disabling Profile Photos
-
-If you do not wish to allow users to upload custom profile photos, you may disable the feature in your `config/jetstream.php` configuration file. To disable the feature, simply comment out the feature entry from the `features` configuration item within this file:
-
-```php
-'features' => [
-    // Features::profilePhotos(),
-    Features::api(),
-    Features::teams(),
-],
-```
 
 ## Account Deletion
 

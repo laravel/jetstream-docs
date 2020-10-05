@@ -15,6 +15,18 @@ By default, the API token creation panel may be accessed using the "API" link of
 For more information on Sanctum and to learn how to issue requests to a Sanctum authenticated API, please consult the official [Sanctum documentation](https://laravel.com/docs/sanctum).
 :::
 
+## Enabling API Support
+
+If your application will be offering an API to third-parties, you must enable Jetstream's API feature. To do so, you should uncomment the relevant entry in the `features` configuration option of the `config/jetstream.php` configuration file:
+
+```php
+'features' => [
+    Features::profilePhotos(),
+    Features::api(),
+    Features::teams(),
+],
+```
+
 ## Defining Permissions
 
 The permissions available to API tokens are defined using the `Jetstream::permissions` method within your application's `JetstreamServiceProvider`. Permissions are just simple strings. Once they have been defined they may be assigned to an API token:
@@ -45,15 +57,3 @@ $request->user()->tokenCan('read');
 When a user makes a request to a route within your `routes/web.php` file, the request will typically be authenticated by Sanctum through a cookie based `web` guard. Since the user is making a first-party request through the application UI in this scenario, the `tokenCan` method will always return `true`.
 
 At first, this behavior may seem strange; however, it is convenient to be able to always assume an API token is available and can be inspected via the `tokenCan` method. This means that within your application's authorizations policies you may always call this method without fear that there is no token associated with the request.
-
-## Disabling API Support
-
-If your application will not be offering an API to third-parties, you can disable Jetstream's API feature entirely. To do so, you should comment out the relevant entry in the `features` configuration option of the `config/jetstream.php` configuration file:
-
-```php
-'features' => [
-    Features::profilePhotos(),
-    // Features::api(),
-    Features::teams(),
-],
-```
