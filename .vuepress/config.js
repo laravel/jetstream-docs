@@ -21,7 +21,7 @@ module.exports = {
         activeHeaderLinks: false,
         searchPlaceholder: 'Press / to search',
         lastUpdated: false, // string | boolean
-        sidebarDepth: 0,
+        sidebarDepth: 1,
 
         repo: 'laravel/jetstream',
 
