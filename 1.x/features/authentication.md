@@ -40,7 +40,7 @@ Fortify::registerView(function () {
 
 As typical of most Jetstream features, the logic executed to satisfy registration / authentication requests can be found in an action class within your application.
 
-Specifically, the `App\Actions\Fortify\CreateNewUser` class will be invoked when a user updates registers with your application. This action is responsible for validating the input and creating the user.
+Specifically, the `App\Actions\Fortify\CreateNewUser` class will be invoked when a user registers with your application. This action is responsible for validating the input and creating the user.
 
 Therefore, any customizations you wish to make to user creation logic should be made in this class. The action receives an array of `$input` that contains all of the input from the incoming request.
 
