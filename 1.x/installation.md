@@ -4,6 +4,11 @@
 
 ## Installing Jetstream
 
+:::danger Do not install Jetstream on an existing project
+
+Jetstream is meant for new projects only. Attempting to install this package on an existing project will overwrite the files and may result in loss of your work. 
+:::
+
 If you have installed the [Laravel Installer](https://laravel.com/docs/installation#installing-laravel), you may use the `--jet` option to create a new Jetstream powered Laravel application:
 
 ```bash
