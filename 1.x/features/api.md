@@ -57,3 +57,9 @@ $request->user()->tokenCan('read');
 When a user makes a request to a route within your `routes/web.php` file, the request will typically be authenticated by Sanctum through a cookie based `web` guard. Since the user is making a first-party request through the application UI in this scenario, the `tokenCan` method will always return `true`.
 
 At first, this behavior may seem strange; however, it is convenient to be able to always assume an API token is available and can be inspected via the `tokenCan` method. This means that within your application's authorizations policies you may always call this method without fear that there is no token associated with the request.
+
+Note that the `tokenCan` only deaults to true for first-party API request authenticated using Laravel Sanctum as described in the [Laraven Sanctum docs]https://laravel.com/docs/8.x/sanctum#token-abilities). This method will not default to true for applications using other authentication like [laravel/ui](https://github.com/laravel/ui) which is used by for example [Laravel Nova](https://nova.laravel.com/). In such cases policies using `tokenCan` needs to check manually if the request is comming from a first-party UI not authenticated by Sanctum:
+
+```php
+request()->is('nova-api/*') || $request->user()->tokenCan('read'); // Check if an API request from Laravel Nova
+```
