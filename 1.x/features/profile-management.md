@@ -16,9 +16,23 @@ Each of these templates will receive the entire authenticated user object so tha
 
 ## Actions
 
+### User Profile
+
 As typical of most Jetstream features, the logic executed to satisfy profile update requests can be found in an action class within your application. Specifically, the `App\Actions\Fortify\UpdateUserProfileInformation` class will be invoked when the user updates their profile. This action is responsible for validating the input and updating the user's profile information.
 
 Therefore, any customizations you wish to make to this logic should be made in this class. The action receives the currently authenticated `$user` and an array of `$input` that contains all of the input from the incoming request, including the updated profile photo if applicable.
+
+#### Using with API
+
+To update the current user's profile information with API support turned on, a PUT request must be called to the `user/profile-information` route provided by Jetstream. 
+
+### Update Password
+
+When the user changes his/her password, the `App\Actions\Fortify\UpdateUserPassword` action is called, which uses the password validation rules provided by the `App\Actions\Fortify\PasswordValidationRules` class. For more information, see [Password Validation Rules](https://jetstream.laravel.com/1.x/features/authentication.html#password-validation-rules).
+
+#### Using with API
+
+To call this action with API, a PUT request must be called to the `user/password` route. 
 
 ## Profile Photos
 
