@@ -179,3 +179,26 @@ public function view(User $user, Flight $flight)
            $user->tokenCan('flight:view');
 }
 ```
+
+#### Team Policy Customisation
+
+If you may want to customise the default Team policy in Jetstream, you can change that in `app/Policies/TeamPolicy.php`. For instance, you have a Laravel Nova installed together with Jetstream. You want to administrate the Teams in your application and you need to changes some of the policy for team to ensure you are able to update the teams in your application:
+
+```php
+/**
+ * Determine whether the user can update the model.
+ *
+ * @return mixed
+ */
+public function update(User $user, Team $team)
+{
+    return $user->ownsTeam($team) || (
+        (
+            request()->is(config('nova.path') . '/*') 
+            || request()->is('nova-api/*') 
+            || request()->is('nova-vendor/*')
+        ) 
+        && $user->hasRole('superadmin|administrator')
+    );
+}
+```
