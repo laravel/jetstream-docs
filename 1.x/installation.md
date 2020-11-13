@@ -4,42 +4,27 @@
 
 ## Installing Jetstream
 
-If you have installed the [Laravel Installer](https://laravel.com/docs/installation#installing-laravel), you may use the `--jet` option to create a new Jetstream powered Laravel application:
-
-```bash
-laravel new project-name --jet
-```
-
-After installing Jetstream via the Laravel Installer, you should migrate your database:
-
-```bash
-php artisan migrate
-```
-
-:::danger Existing Projects
-
-Jetstream is only meant to be installed on **new** Laravel projects. You should not attempt to migrate an existing project to Jetstream.
-:::
-
-### Composer Installation
-
-Alternatively, you may use Composer to install Jetstream into your new Laravel project:
+You may use Composer to install Jetstream into your new Laravel project:
 
 ```bash
 composer require laravel/jetstream
 ```
 
-If you choose to install Jetstream through Composer, you should run the `jetstream:install` Artisan command. This command accepts the name of the stack you prefer (livewire or inertia). You are highly encouraged to read through the entire documentation of [Livewire](https://laravel-livewire.com) or [Inertia](https://inertiajs.com) before beginning your Jetstream project. In addition, you may use the `--teams` switch to enable team support:
+After installing the Jetstream package, you should run the `jetstream:install` Artisan command. This command accepts the name of the stack you prefer (livewire or inertia). You are highly encouraged to read through the entire documentation of [Livewire](https://laravel-livewire.com) or [Inertia](https://inertiajs.com) before beginning your Jetstream project. In addition, you may use the `--teams` switch to enable team support:
 
 #### Install Jetstream With Livewire
 
 ```bash
+php artisan jetstream:install livewire
+
 php artisan jetstream:install livewire --teams
 ```
 
 #### Or, Install Jetstream With Inertia
 
 ```bash
+php artisan jetstream:install inertia
+
 php artisan jetstream:install inertia --teams
 ```
 
