@@ -27,7 +27,34 @@ If you're new to Livewire, check out the [screencasts available on the Livewire 
 
 ### Inertia.js + Vue
 
-The Inertia.js stack provided by Jetstream uses [Vue.js](https://vuejs.org) as its templating language. Building an Inertia application is a lot like building a typical Vue application; however, you will use Laravel's router instead of Vue router. Inertia is a small library that allows you to render single-file Vue components from your Laravel backend by providing the name of the component and the data that should be hydrated into that component's "props".
+The Inertia.js stack provided by Jetstream uses [Vue.js](https://vuejs.org) as its templating language. Building an Inertia application is a lot like building a typical Vue application; however, you will use Laravel's router instead of Vue router. Inertia is a small library that allows you to render single-file Vue components from your Laravel backend by providing the name of the component and the data that should be hydrated into that component's "props" like this.
+
+```{js}
+Route::middleware(['auth:sanctum', 'verified'])->get('/edit', function () {
+    return Inertia\Inertia::render('Edit', [
+        'testing_props' => 'This is prop testing'
+    ]);
+})->name('edit');
+```
+Then in your Vue page (Edit.vue) you can do like this:
+
+```{js}
+<template>
+  <h1>This props {{ testing_props }} is from Laravel routes</h1>
+</template>
+<script>
+
+
+export default {
+  components: {
+    //your components
+  },
+
+  props: ['testing_props']
+};
+</script>
+
+```
 
 In other words, this stack gives you the full power of Vue.js without the complexity of client-side routing. You get to use the standard Laravel router that you are used to.
 
