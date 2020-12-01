@@ -33,6 +33,13 @@ If you wish to allow users to upload custom profile photos, you must enable the 
     Features::teams(),
 ],
 ```
+You should also remember to run 
+
+```bash
+php artisan storage:link
+```
+in order to setup the links necessary to store and make the image files accessible.
+
 
 ### Managing Profile Photos
 
@@ -41,6 +48,7 @@ By default, Jetstream allows users to upload custom profile photos. This functio
 This trait contains methods such as `updateProfilePhoto`, `getProfilePhotoUrlAttribute`, `defaultProfilePhotoUrl`, and `profilePhotoDisk` which may all be overwritten by your own `App\Models\User` class if you need to customize their behavior. You are encouraged to read through the source code of this trait so that you have a full understanding of the features it is providing to your application.
 
 The `updateProfilePhoto` method is the primary method used to store profile photos and is called by the `UpdateUserProfileInformation` action.
+
 
 :::tip Laravel Vapor
 
