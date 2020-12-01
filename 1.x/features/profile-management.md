@@ -34,6 +34,12 @@ If you wish to allow users to upload custom profile photos, you must enable the 
 ],
 ```
 
+In addition, you should execute the `storage:link` Artisan command. For information regarding this command, please consult the [Laravel filesystem documentation](https://laravel.com/docs/filesystem#the-public-disk):
+
+```bash
+php artisan storage:link
+```
+
 ### Managing Profile Photos
 
 By default, Jetstream allows users to upload custom profile photos. This functionality is supported by the `Laravel\Jetstream\HasProfilePhoto` trait that is automatically attached to your `App\Models\User` class during Jetstream's installation.
