@@ -35,10 +35,10 @@ The permissions available to API tokens are defined using the `Jetstream::permis
 Jetstream::defaultApiTokenPermissions(['read']);
 
 Jetstream::permissions([
-    'create-post',
-    'read-posts',
-    'update-posts',
-    'delete-posts',
+    'post:create',
+    'post:read',
+    'post:update',
+    'post:delete',
 ]);
 ```
 
@@ -52,7 +52,7 @@ This `HasApiTokens` trait is automatically applied to your application's `App\Mo
 
 ```php
 return $request->user()->id === $post->user_id &&
-       $request->user()->tokenCan('update-posts')
+       $request->user()->tokenCan('post:update')
 ```
 
 ### First-Party UI Initiated Requests
@@ -65,7 +65,7 @@ For example, in the case of updating a blog post, this might mean checking that 
 
 ```php
 return $request->user()->id === $post->user_id &&
-       $request->user()->tokenCan('update-posts')
+       $request->user()->tokenCan('post:update')
 ```
 
 At first, allowing the `tokenCan` method to be called and always return `true` for first-party UI initiated requests may seem strange; however, it is convenient to be able to always assume an API token is available and can be inspected via the `tokenCan` method. This means that you may always call the `tokenCan` method within your application's authorizations policies without worrying about whether the request was triggered from your application's UI or was initiated by one of your API's third-party consumers.
