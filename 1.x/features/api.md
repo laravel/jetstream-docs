@@ -17,7 +17,7 @@ For more information on Sanctum and to learn how to issue requests to a Sanctum 
 
 ## Enabling API Support
 
-If your application will be offering an API to third-parties, you must enable Jetstream's API feature. To do so, you should uncomment the relevant entry in the `features` configuration option of the `config/jetstream.php` configuration file:
+If your application will be offering an API that may be consumed by third-parties, you must enable Jetstream's API feature. To do so, you should uncomment the relevant entry in the `features` configuration option of your application's `config/jetstream.php` configuration file:
 
 ```php
 'features' => [
@@ -29,31 +29,43 @@ If your application will be offering an API to third-parties, you must enable Je
 
 ## Defining Permissions
 
-The permissions available to API tokens are defined using the `Jetstream::permissions` method within your application's `JetstreamServiceProvider`. Permissions are just simple strings. Once they have been defined they may be assigned to an API token:
+The permissions available to API tokens are defined using the `Jetstream::permissions` method within your application's `App\Providers\JetstreamServiceProvider` class. Permissions are defined as simple strings. Once they have been defined they may be assigned to an API token:
 
 ```php
 Jetstream::defaultApiTokenPermissions(['read']);
 
 Jetstream::permissions([
-    'create',
-    'read',
-    'update',
-    'delete',
+    'create-post',
+    'read-posts',
+    'update-posts',
+    'delete-posts',
 ]);
 ```
 
-The `defaultApiTokenPermissions` method may be used to specify which permissions should be selected by default when creating a new API token. Of course, a user may uncheck a default permission before creating the token.
+The `defaultApiTokenPermissions` method in the example above may be used to specify which permissions should be selected by default when creating a new API token. Of course, a user may uncheck a default permission before creating the token.
 
 ## Authorizing Incoming Requests
 
-Every request made to your Jetstream application, even to authenticated routes within your `routes/web.php` file, will be associated with a Sanctum token object. You may determine if the associated token has a given permission using the `tokenCan` method provided by the `Laravel\Sanctum\HasApiTokens` trait. This trait is automatically applied to your application's `App\Models\User` model during Jetstream's installation:
+Every request made to your Jetstream application, even to authenticated routes within your `routes/web.php` file, will be associated with a Sanctum token object. You may determine if the associated token has a given permission using the `tokenCan` method provided by the `Laravel\Sanctum\HasApiTokens` trait.
+
+This `HasApiTokens` trait is automatically applied to your application's `App\Models\User` model during Jetstream's installation. Typically, you will call the `tokenCan` method within your application's controllers, Livewire components, or [authorization policies](https://laravel.com/docs/authorization#creating-policies):
 
 ```php
-$request->user()->tokenCan('read');
+return $request->user()->id === $post->id &&
+       $request->user()->tokenCan('update-posts')
 ```
 
-#### First-Party UI Initiated Requests
+### First-Party UI Initiated Requests
 
-When a user makes a request to a route within your `routes/web.php` file, the request will typically be authenticated by Sanctum through a cookie based `web` guard. Since the user is making a first-party request through the application UI in this scenario, the `tokenCan` method will always return `true`.
+When a user makes a request to a route within your `routes/web.php` file, the request will typically be authenticated by Sanctum through a authenticated session cookie based guard. In most Laravel applications, this is the `web` guard.
 
-At first, this behavior may seem strange; however, it is convenient to be able to always assume an API token is available and can be inspected via the `tokenCan` method. This means that within your application's authorizations policies you may always call this method without fear that there is no token associated with the request.
+When the user is making a first-party request through the application UI, the `tokenCan` method will always return `true`. Remember, this does not necessarily mean that your application has to allow the user to perform the action. Typically, your policies will determine if the token has been granted the permission to perform the abilities **as well as check that the user instance itself should be allowed to perform the action**.
+
+For example, in the case of updating a blog post, this might mean checking that token is authorized to update posts **and** that the post belongs to the user:
+
+```php
+return $request->user()->id === $post->user_id &&
+       $request->user()->tokenCan('update-posts')
+```
+
+At first, allowing the `tokenCan` method to be called and always return `true` for first-party UI initiated requests may seem strange; however, it is convenient to be able to always assume an API token is available and can be inspected via the `tokenCan` method. This means that you may always call the `tokenCan` method within your application's authorizations policies without worrying about whether the request was triggered from your application's UI or was initiated by one of your API's third-party consumers.
