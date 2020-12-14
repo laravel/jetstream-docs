@@ -119,6 +119,8 @@ Like the customization process for other Jetstream features, team member additio
 
 This action is responsible for validating that the user can actually be added to the team and then adding the user to the team. You are free to customize this action based on the needs of your particular application.
 
+Team member removal may be customized by modifying the `App\Actions\Jetstream\RemoveTeamMember` action class.
+
 ### Member Management Views / Pages
 
 When using the Livewire stack, the team member manager view is displayed using the `resources/views/teams/team-member-manager.blade.php` Blade template. When using the Inertia stack, this view is displayed using the `resources/js/Pages/Teams/TeamMemberManager.vue` template. Generally, these templates should not require customization.
