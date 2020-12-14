@@ -136,7 +136,7 @@ In addition to scaffolding views and actions related to login / authentication, 
 
 :::tip Laravel Mail
 
-Before using the password reset feature, you should ensure that your Laravel application is configured to [send emails](https://laravel.com/docs/mail).
+Before using the password reset feature, you should ensure that your Laravel application is configured to [send emails](https://laravel.com/docs/mail). Otherwise, Laravel will not be able to send password reset links to your application's users.
 :::
 
 ### Actions
