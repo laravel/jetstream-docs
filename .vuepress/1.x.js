@@ -21,7 +21,7 @@ module.exports = [
             'teams',
         ]),
     }, {
-        title: "Stacks",
+        title: "Stack Features",
         collapsable: false,
         children: prefix('stacks', [
             'livewire',
