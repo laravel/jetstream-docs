@@ -44,7 +44,7 @@ Of course, these methods may be chained to define the password validation rules 
 
 ## Views / Pages
 
-When using the Livewire stack, the registration view is displayed using the `resources/views/auth/register.blade.php` Blade template. When using the Inertia stack, this view is displayed using the `resources/js/Pages/Auth/Register.vue` template.
+When using the Livewire stack, the registration view is displayed using the `resources/views/auth/register.blade.php` Blade template. When using the Inertia stack, this view is displayed using the `resources/js/Pages/Auth/Register.vue` template. Any additional fields you add to these pages will be available via the `$input` array passed to the `App\Actions\Fortify\CreateNewUser` action.
 
 ### Customizing The Registration View
 
@@ -102,3 +102,8 @@ use Laravel\Fortify\Features;
 Next, you should ensure that your `App\Models\User` class implements the `Illuminate\Contracts\Auth\MustVerifyEmail` interface. This interface is already imported into this model for you.
 
 Once these two setup steps have been completed, newly registered users will receive an email prompting them to verify their email address ownership.
+
+:::tip Laravel Mail
+
+Before using the password reset feature, you should ensure that your Laravel application is configured to [send emails](https://laravel.com/docs/mail).
+:::

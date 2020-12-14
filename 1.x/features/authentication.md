@@ -129,3 +129,58 @@ Fortify::authenticateThrough(function (Request $request) {
     ]);
 });
 ```
+
+## Password Reset
+
+In addition to scaffolding views and actions related to login / authentication, Jetstream also scaffolds the resources needed for a user to reset their password in case it is forgotten. Of course, this feature utilizes Laravel's underlying [password reset features](https://laravel.com/docs/passwords).
+
+:::tip Laravel Mail
+
+Before using the password reset feature, you should ensure that your Laravel application is configured to [send emails](https://laravel.com/docs/mail).
+:::
+
+### Actions
+
+As typical of most Jetstream features, the logic executed to satisfy password reset requests can be found in an action class within your application. Remember, actions are granular classes that are responsible for performing a single task related to a Jetstream or Fortify feature.
+
+Specifically, the `App\Actions\Fortify\ResetUserPassword` class will be invoked when a user resets their password. This action is responsible for validating the user's new password and updating the password on the user instance. Therefore, any customizations you wish to make to user password reset logic should be made in this class. The action receives an array of `$input` that contains all of the input from the incoming request.
+
+#### Password Validation Rules
+
+The `App\Actions\Fortify\CreateNewUser`, `App\Actions\Fortify\ResetUserPassword`, and `App\Actions\Fortify\UpdateUserPassword` actions all utilize the `App\Actions\Fortify\PasswordValidationRules` trait.
+
+As you may have noticed, the `App\Actions\Fortify\PasswordValidationRules` trait utilizes a custom `Laravel\Fortify\Rules\Password` validation rule object. This object allows you to easily customize the password requirements for your application. By default, the rule requires a password that is at least eight characters in length. However, you may use the following methods to customize the password's requirements:
+
+```php
+use Laravel\Fortify\Rules\Password;
+
+// Require at least 10 characters...
+(new Password)->length(10)
+
+// Require at least one uppercase character...
+(new Password)->requireUppercase()
+
+// Require at least one numeric character...
+(new Password)->requireNumeric()
+
+// Require at least one special character...
+(new Password)->requireSpecialCharacter()
+```
+
+Of course, these methods may be chained to define the password validation rules for your application:
+
+```php
+(new Password)->length(10)->requireSpecialCharacter()
+```
+
+### Views / Pages
+
+Jetstream's password reset feature is implemented using two screens: a screen where the user can request a password reset link and a screen that actually allows the user to reset their password.
+
+#### Password Reset Link Request
+
+When using the Livewire stack, the password reset link request view is displayed using the `resources/views/auth/forgot-password.blade.php` Blade template. When using the Inertia stack, this view is displayed using the `resources/js/Pages/Auth/ForgotPassword.vue` template.
+
+#### Reset Password
+
+When using the Livewire stack, the password reset view is displayed using the `resources/views/auth/reset-password.blade.php` Blade template. When using the Inertia stack, this view is displayed using the `resources/js/Pages/Auth/ResetPassword.vue` template.
