@@ -20,6 +20,8 @@ Modal based password authentication might be used when you would like the user t
 
 The following documentation will discuss how to use redirect based password confirmation in Jetstream. Redirect based password confirmation is typically used when the user needs to confirm their password before accessing an entire screen that is rendered by your application, such as a billing settings screen.
 
+![Screenshot of Password Confirmation](./../../assets/img/redirect-confirm.png)
+
 ### Redirect Password Confirmation Via Livewire
 
 #### Protecting Routes
@@ -91,6 +93,8 @@ Once the user has confirmed their password, they will not be required to re-ente
 ## Modal Password Confirmation
 
 The following documentation will discuss how to use modal based password confirmation in Jetstream. Modal based password authentication is typically used when you would like the user to confirm their password before performing a specific action, such as when enabling two-factor authentication.
+
+![Screenshot of Password Confirmation](./../../assets/img/modal-confirm.png)
 
 ### Modal Password Confirmation Via Livewire
 
