@@ -123,6 +123,35 @@ This action is responsible for validating that the user can actually be added to
 
 When using the Livewire stack, the team member manager view is displayed using the `resources/views/teams/team-member-manager.blade.php` Blade template. When using the Inertia stack, this view is displayed using the `resources/js/Pages/Teams/TeamMemberManager.vue` template. Generally, these templates should not require customization.
 
+### Invitations
+
+By default, Jetstream will simply add any existing application user that you specify to your team. However, many applications choose to send invitation emails to users that are invited to teams. If the user does not have an account, the invitation email can instruct them to create an account and accept the invitation. Or, if the user already has an account, they can accept or ignore the invitation.
+
+Thankfully, Jetstream allows you to enable team member invitations for your application with just a few lines of code. To get started, pass the `invitations` option when enabling the "teams" feature for your application. This may be done by modifying the `features` array of your application's `config/jetstream.php` configuration file:
+
+```php
+use Laravel\Jetstream\Features;
+
+'features' => [
+    Features::termsAndPrivacyPolicy(),
+    Features::profilePhotos(),
+    Features::api(),
+    Features::teams(['invitations' => true]),
+    Features::accountDeletion(),
+],
+```
+
+Once you have enabled Jetstream's invitations feature, users that are invited to teams will receive an invitation email with a link to accept the team invitation. Users will not be full members of the team until the invitation is accepted.
+
+#### Invitation Actions
+
+When a user is invited to the team, your application's `App\Actions\Jetstream\InviteTeamMember` action will be invoked with the currently authenticated user, the team that the new user is invited to, the email address of the invited user, and, optionally, the role that should be assigned to the user once they join the team. You are free to review this action or modify it based on the needs of your own application.
+
+:::tip Laravel Mail
+
+Before using the team invitation feature, you should ensure that your Laravel application is configured to [send emails](https://laravel.com/docs/mail). Otherwise, Laravel will be unable to send team invitation emails to your application's users.
+:::
+
 ## Roles / Permissions
 
 Each team member added to a team may be assigned a given role, and each role is assigned a set of permissions. Role permissions are defined in your application's `App\Providers\JetstreamServiceProvider` class using the `Jetstream::role` method. This method accepts a "slug" for the role, a user-friendly role name, the role permissions, and a description of the role. This information will be used to display the role within the team member management view.
