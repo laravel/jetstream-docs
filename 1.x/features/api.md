@@ -51,7 +51,7 @@ Every request made to your Jetstream application, even to authenticated routes w
 This `HasApiTokens` trait is automatically applied to your application's `App\Models\User` model during Jetstream's installation. Typically, you will call the `tokenCan` method within your application's controllers, Livewire components, or [authorization policies](https://laravel.com/docs/authorization#creating-policies):
 
 ```php
-return $request->user()->id === $post->id &&
+return $request->user()->id === $post->user_id &&
        $request->user()->tokenCan('update-posts')
 ```
 
