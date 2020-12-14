@@ -4,7 +4,7 @@
 
 ## Introduction
 
-While building your application, you may occasionally have actions that should require the user to confirm their password before the action is performed. Thankfully, Jetstream has built-in functionality to make this a cinch.
+While building your application, you may occasionally have actions that should require the user to confirm their password before the action is performed. For example, Jetstream itself requires users to confirm their password before changing their two-factor authentication settings. Thankfully, Jetstream has built-in functionality to make this a cinch.
 
 ## Password Confirmation Via Livewire
 
