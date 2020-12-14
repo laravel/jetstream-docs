@@ -13,7 +13,10 @@ module.exports = [
         children: prefix('features', [
             'authentication',
             'profile-management',
-            'security',
+            'password-update',
+            'password-confirmation',
+            'two-factor-authentication',
+            'browser-sessions',
             'api',
             'teams',
         ]),
