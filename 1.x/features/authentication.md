@@ -6,7 +6,7 @@
 
 Laravel Jetstream automatically scaffolds the login, two-factor login, registration, password reset, and email verification features for your project, allowing you to start building the features you care about instead of worrying about the nitty-gritty details of user authentication.
 
-![Screenshot of Authentication](./../../assets/img/authentication.png)
+![Screenshot of Authentication](./../../assets/img/login.png)
 
 ## Laravel Fortify
 
