@@ -10,15 +10,21 @@ Jetstream provides two approaches to password confirmation: redirect based passw
 
 #### Redirect Based Password Confirmation
 
-Redirect based password confirmation is typically used when the user needs to confirm their password before accessing an entire screen that is rendered by your application, such as a billing settings screen. This form of password confirmation redirects the user to a dedicated password confirmation screen where they must confirm their password before being redirected to their intended destination.
+Redirect based password confirmation is typically used when the user needs to confirm their password before accessing an entire screen that is rendered by your application, such as a billing settings screen.
+
+This form of password confirmation redirects the user to a dedicated password confirmation screen where they must confirm their password before being redirected to their intended destination.
 
 #### Modal Based Password Confirmation
 
-Modal based password authentication might be used when you would like the user to confirm their password before performing a specific action, such as when enabling two-factor authentication. This form of password confirmation displays a modal window that allows the user to confirm their password before their intended request is executed.
+Modal based password authentication might be used when you would like the user to confirm their password before performing a specific action, such as when enabling two-factor authentication.
+
+This form of password confirmation displays a modal window that allows the user to confirm their password before their intended request is executed.
 
 ## Redirect Password Confirmation
 
-The following documentation will discuss how to use redirect based password confirmation in Jetstream. Redirect based password confirmation is typically used when the user needs to confirm their password before accessing an entire screen that is rendered by your application, such as a billing settings screen. This form of password confirmation redirects the user to a dedicated password confirmation screen where they must confirm their password before being redirected to their intended destination.
+The following documentation will discuss how to use redirect based password confirmation in Jetstream. Redirect based password confirmation is typically used when the user needs to confirm their password before accessing an entire screen that is rendered by your application, such as a billing settings screen.
+
+This form of password confirmation redirects the user to a dedicated password confirmation screen where they must confirm their password before being redirected to their intended destination.
 
 ![Screenshot of Password Confirmation](./../../assets/img/redirect-confirm.png)
 
@@ -92,7 +98,9 @@ Once the user has confirmed their password, they will not be required to re-ente
 
 ## Modal Password Confirmation
 
-The following documentation will discuss how to use modal based password confirmation in Jetstream. Modal based password authentication is typically used when you would like the user to confirm their password before performing a specific action, such as when enabling two-factor authentication. This form of password confirmation displays a modal window that allows the user to confirm their password before their intended request is executed.
+The following documentation will discuss how to use modal based password confirmation in Jetstream. Modal based password authentication is typically used when you would like the user to confirm their password before performing a specific action, such as when enabling two-factor authentication.
+
+This form of password confirmation displays a modal window that allows the user to confirm their password before their intended request is executed.
 
 ![Screenshot of Password Confirmation](./../../assets/img/modal-confirm.png)
 
