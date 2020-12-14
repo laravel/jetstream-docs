@@ -5,6 +5,7 @@ module.exports = [
         children: [
             'introduction',
             'installation',
+            'concept-overview',
         ],
     }, {
         title: "Features",
