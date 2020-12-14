@@ -69,6 +69,11 @@ public function boot()
 }
 ```
 
+:::tip Authentication View Customization
+
+To learn how to customize the Inertia pages rendered by Jetstream's authentication related routes such as login, registration, and password reset, check out the [authentication documentation](./../features/authentication.md#customizing-inertia-authentication-views).
+:::
+
 ## Form / Validation Helpers
 
 In order to make working with forms and validation errors more convenient, a [laravel-jetstream](https://github.com/laravel/jetstream-js) NPM package has been created. This package is automatically installed when using the Jetstream Inertia stack.

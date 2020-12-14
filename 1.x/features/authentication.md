@@ -42,6 +42,8 @@ public function boot()
 }
 ```
 
+#### Customizing Inertia Authentication Views
+
 If your application is using the Inertia stack, you may return Inertia pages from your view customization closures:
 
 ```php
