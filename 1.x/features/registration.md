@@ -82,6 +82,28 @@ Fortify::registerView(function () {
 });
 ```
 
+## Requiring Terms Of Service / Privacy Policy Approval
+
+Many application require users to accept their terms of service / privacy policy during registration. Jetstream allows you to easily enable this requirement for your own application, as well as provides a convenient way of writing these documents using Markdown.
+
+To get started, enable this feature in your application's `config/jetstream.php` configuration file:
+
+```php
+use Laravel\Fortify\Features;
+
+'features' => [
+    Features::termsAndPrivacyPolicy(),
+    // Features::profilePhotos(),
+    // Features::api(),
+    // Features::teams(),
+    Features::accountDeletion(),
+],
+```
+
+Next, you may write your terms of service / privacy policy documents by modifying your application's `resources/markdown/terms.md` and `resources/markdown/policy.md` files.
+
+During registration, Jetstream will automatically ask the user to approve these documents. When the user clicks on the link to view the documents, Jetstream will use [Tailwind's typography plug-in](https://tailwindcss.com/docs/typography-plugin) to render the Markdown into beautifully formatted prose.
+
 ## Email Verification
 
 Laravel Jetstream includes support for requiring that a newly registered user verify their email address. However, support for this feature is disabled by default. To enable this feature, you should uncomment the relevant entry in the `features` configuration item of your application's `config/fortify.php` configuration file:
