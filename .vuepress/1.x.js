@@ -12,6 +12,7 @@ module.exports = [
         collapsable: false,
         children: prefix('features', [
             'authentication',
+            'registration',
             'profile-management',
             'password-update',
             'password-confirmation',

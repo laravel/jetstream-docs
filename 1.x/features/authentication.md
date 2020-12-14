@@ -16,11 +16,15 @@ When Jetstream is installed, the `config/fortify.php` configuration file is inst
 
 Within the `fortify` configuration file, you can also disable entire features of Fortify, such as the ability to update profile information or passwords.
 
-## Customizing The Authentication Views
+## Views / Pages
 
-Laravel Jetstream will automatically render the proper views for your application's login, registration, and other authentication screens. However, sometimes you may wish to customize how a particular authentication view is rendered or the data that is received by the view.
+When using the Livewire stack, the login view is displayed using the `resources/views/auth/login.blade.php` Blade template. When using the Inertia stack, this view is displayed using the `resources/js/Pages/Auth/Login.vue` template. The directories that contain these views also contain other authentication related views / pages for your application.
 
-All of the authentication view's rendering logic may be customized using the appropriate methods available via the `Laravel\Fortify\Fortify` class. Typically, you should call this method from the `boot` method of your `JetstreamServiceProvider`:
+### Customizing The Authentication Views
+
+Laravel Jetstream will automatically render the proper views for your application's login and other authentication screens. However, sometimes you may wish to customize how a particular authentication view is rendered or the data that is received by the view.
+
+All of the authentication view's rendering logic may be customized using the appropriate methods available via the `Laravel\Fortify\Fortify` class. Typically, you should call this method from the `boot` method of your application's `App\Providers\JetstreamServiceProvider` class:
 
 ```php
 use Laravel\Fortify\Fortify;
@@ -34,10 +38,6 @@ public function boot()
 {
     Fortify::loginView(function () {
         return view('auth.login');
-    });
-
-    Fortify::registerView(function () {
-        return view('auth.register');
     });
 }
 ```
@@ -57,40 +57,6 @@ Fortify::loginView(function () {
         'status' => session('status'),
     ]);
 });
-```
-
-## Actions
-
-As typical of most Jetstream features, the logic executed to satisfy registration / authentication requests can be found in an action class within your application. Remember, actions are granular classes that are responsible for performing a single task related to a Jetstream or Fortify feature.
-
-Specifically, the `App\Actions\Fortify\CreateNewUser` class will be invoked when a user registers with your application. This action is responsible for validating the incoming request input and creating the user. Therefore, any customizations you wish to make to user creation logic should be made in this class. The action receives an array of `$input` that contains all of the input from the incoming request.
-
-### Password Validation Rules
-
-The `App\Actions\Fortify\CreateNewUser`, `App\Actions\Fortify\ResetUserPassword`, and `App\Actions\Fortify\UpdateUserPassword` actions all utilize the `App\Actions\Fortify\PasswordValidationRules` trait.
-
-As you may have noticed, the `App\Actions\Fortify\PasswordValidationRules` trait utilizes a custom `Laravel\Fortify\Rules\Password` validation rule object. This object allows you to easily customize the password requirements for your application. By default, the rule requires a password that is at least eight characters in length. However, you may use the following methods to customize the password's requirements:
-
-```php
-use Laravel\Fortify\Rules\Password;
-
-// Require at least 10 characters...
-(new Password)->length(10)
-
-// Require at least one uppercase character...
-(new Password)->requireUppercase()
-
-// Require at least one numeric character...
-(new Password)->requireNumeric()
-
-// Require at least one special character...
-(new Password)->requireSpecialCharacter()
-```
-
-Of course, these methods may be chained to define the password validation rules for your application:
-
-```php
-(new Password)->length(10)->requireSpecialCharacter()
 ```
 
 ## Customizing The Authentication Process
@@ -163,24 +129,3 @@ Fortify::authenticateThrough(function (Request $request) {
     ]);
 });
 ```
-
-## Email Verification
-
-Laravel Jetstream includes support for requiring that a newly registered user verify their email address. However, support for this feature is disabled by default. To enable this feature, you should uncomment the relevant entry in the `features` configuration item of your application's `config/fortify.php` configuration file:
-
-```php
-use Laravel\Fortify\Features;
-
-'features' => [
-    Features::registration(),
-    Features::resetPasswords(),
-    Features::emailVerification(),
-    Features::updateProfileInformation(),
-    Features::updatePasswords(),
-    Features::twoFactorAuthentication(),
-],
-```
-
-Next, you should ensure that your `App\Models\User` class implements the `Illuminate\Contracts\Auth\MustVerifyEmail` interface. This interface is already imported into this model for you.
-
-Once these two setup steps have been completed, newly registered users will receive an email prompting them to verify their email address ownership.
