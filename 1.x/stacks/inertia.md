@@ -4,11 +4,9 @@
 
 ## Introduction
 
-The Inertia.js stack provided by Jetstream uses [Vue.js](https://vuejs.org) as its templating language. Building an Inertia application is a lot like building a typical Vue application; however, you will use Laravel's router instead of Vue router. Inertia is a small library that allows you to render single-file Vue components from your Laravel backend by providing the name of the component and the data that should be hydrated into that component's "props".
+The Inertia stack provided by Jetstream uses [Vue.js](https://vuejs.org) as its templating language. Building an Inertia application is a lot like building a typical Vue application; however, you will use Laravel's router instead of Vue router. Inertia is a small library that allows you to render single-file Vue components from your Laravel backend by providing the name of the component and the data that should be hydrated into that component's "props".
 
-In other words, this stack gives you the full power of Vue.js without the complexity of client-side routing. You get to use the standard Laravel router that you are used to. The Inertia stack is a great choice if you are comfortable with and enjoy using Vue.js as your templating language.
-
-When using Inertia, your application's routes will respond by rendering an Inertia "page". This looks very similar to returning a Laravel Blade view:
+In other words, this stack gives you the full power of Vue.js without the complexity of client-side routing. The Inertia stack is a great choice if you are comfortable with and enjoy using Vue.js as your templating language. When using Inertia, your application's routes will respond by rendering an Inertia "page". This looks very similar to returning a Laravel Blade view:
 
 ```php
 use Illuminate\Http\Request;
@@ -37,35 +35,45 @@ Before using the Inertia stack, you are strongly encouraged to review the entire
 
 ## Components
 
-While building the Jetstream Inertia stack, a variety of Vue components (buttons, panels, inputs, modals) were created to assist in creating UI consistency and ease of use. You are free to use or not use these components. All of these components are located within your application's `resources/js/Jetstream` directory.
+When we created the Jetstream Inertia stack, a variety of Vue components (buttons, panels, inputs, modals) were created to assist in creating UI consistency and ease of use. You are free to use or not use these components. All of these components are located within your application's `resources/js/Jetstream` directory.
 
-You may gain insight into how to use these components by reviewing their usage within Jetstream's existing pages located within your `resources/js/Pages` directory.
+You may gain insight into how to use these components by reviewing their usage within Jetstream's existing pages located within your application's `resources/js/Pages` directory.
 
-## Custom Rendering
+## Customizing Jetstream's Page Rendering
 
 Some of Jetstream's Inertia pages, such as `Teams/Show` and `Profile/Show` are rendered from within Jetstream itself. However, you may need to pass additional data to these pages while building your application. Therefore, Jetstream allows you to customize the data / props passed to these pages using the `Jetstream::inertia()->whenRendering` method.
 
-This method accepts the name of the page you wish to customize and a Closure. The Closure will receive the incoming HTTP request and an array of the default data that would typically be sent to the page. You are welcome to customize or add new array elements to the data as necessary. Typically, you should call this method from within the `boot` method of your `JetstreamServiceProvider`:
+This method accepts the name of the page you wish to customize and a closure. The closure will receive the incoming HTTP request and an array of the default data that would typically be sent to the page. You are welcome to customize or add new array elements to the data as necessary. Typically, you should call this method from within the `boot` method of your `App\Providers\JetstreamServiceProvider` class:
 
 ```php
 use Illuminate\Http\Request;
 use Laravel\Jetstream\Jetstream;
 
-Jetstream::inertia()->whenRendering(
-    'Profile/Show',
-    function (Request $request, array $data) {
-        return array_merge($data, [
-            // Custom data...
-        ]);
-    }
-);
+/**
+ * Bootstrap any application services.
+ *
+ * @return void
+ */
+public function boot()
+{
+    // ...
+
+    Jetstream::inertia()->whenRendering(
+        'Profile/Show',
+        function (Request $request, array $data) {
+            return array_merge($data, [
+                // Custom data...
+            ]);
+        }
+    );
+}
 ```
 
 ## Form / Validation Helpers
 
 In order to make working with forms and validation errors more convenient, a [laravel-jetstream](https://github.com/laravel/jetstream-js) NPM package has been created. This package is automatically installed when using the Jetstream Inertia stack.
 
-This package adds a new `form` method to the `$inertia` object that may be accessed via your Vue components. The `form` method is used to create a new form object that will provide easy access to error messages, as well as conveniences such as resetting the form state on a successful form submission:
+This package adds a new `form` method to the `$inertia` object that may be accessed within your Vue components. The `form` method is used to create a new form object that will provide easy access to error messages, as well as conveniences such as resetting the form state on a successful form submission:
 
 ```js
 data() {
@@ -119,7 +127,7 @@ To learn more about using Jetstream's Inertia form helpers, you are free to revi
 
 ## Modals
 
-Jetstream's Inertia stack also includes two modal components: `DialogModal` and `ConfirmationModal`. The `ConfirmationModal` may be used when confirming destructive actions such as deletions, while the `DialogModal` is a more generic modal window that may be used at any time.
+Jetstream's Inertia stack also includes two modal components: `DialogModal` and `ConfirmationModal`. The `ConfirmationModal` may be used when confirming destructive actions such as the deletion of resources, while the `DialogModal` is a more generic modal window that may be used at any time.
 
 To illustrate the use of modals, consider the following modal that confirms a user would like to delete their account:
 
