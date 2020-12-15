@@ -6,6 +6,7 @@ module.exports = [
             'introduction',
             'installation',
             'concept-overview',
+            'building-your-app',
         ],
     }, {
         title: "Features",
