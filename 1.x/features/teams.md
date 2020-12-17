@@ -27,6 +27,26 @@ When using the Livewire stack, the team creation view is displayed using the `re
 
 Team creation and deletion logic may be customized by modifying the relevant action classes within your `app/Actions/Jetstream` directory. These actions include `CreateTeam`, `UpdateTeamName`, and `DeleteTeam`. Each of these actions is invoked when their corresponding task is performed by the user in the application's UI. You are free to modify these actions as needed based on your application's needs.
 
+Execute code when a Team is created / deleted from the web interface or through Team class API.
+
+When a Team is created either from the web interface of Jetstream or through a REST API call directly, it is required sometimes to execute some initialization code. For example, populate a units_of_measure table with default values for the new Team.
+
+Adding a boot() function inside the Team.php class you can execute initialization code when a Team is created or deleted
+
+```php
+class Team extends JetstreamTeam
+{
+    protected static function boot()
+    {
+        parent::boot();
+
+        Team::created(function ($model) {
+            UnitOfMeasureController::insert_default_units_of_measure_data($model);
+        });
+    }
+  } //Team.php class
+```
+
 ## Inspecting User Teams
 
 Information about a user's teams may be accessed via the methods provided by the `Laravel\Jetstream\HasTeams` trait. This trait is automatically applied to your application's `App\Models\User` model during Jetstream's installation. This trait provides a variety of helpful methods that allow you to inspect a user's teams:
@@ -64,6 +84,9 @@ $user->teamPermissions($team) : array
 
 // Determine if a user has a given team permission...
 $user->hasTeamPermission($team, 'server:create') : bool
+
+// Delete a Team and detach related users
+$team->purge()
 ```
 
 ### Current Team
