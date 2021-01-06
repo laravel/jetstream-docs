@@ -74,62 +74,6 @@ public function boot()
 To learn how to customize the Inertia pages rendered by Jetstream's authentication related routes such as login, registration, and password reset, check out the [authentication documentation](./../features/authentication.md#customizing-inertia-authentication-views).
 :::
 
-## Form / Validation Helpers
-
-In order to make working with forms and validation errors more convenient, a [laravel-jetstream](https://github.com/laravel/jetstream-js) NPM package has been created. This package is automatically installed when using the Jetstream Inertia stack.
-
-This package adds a new `form` method to the `$inertia` object that may be accessed within your Vue components. The `form` method is used to create a new form object that will provide easy access to error messages, as well as conveniences such as resetting the form state on a successful form submission:
-
-```js
-data() {
-    return {
-        form: this.$inertia.form({
-            name: this.name,
-            email: this.email,
-        }, {
-            bag: 'updateProfileInformation',
-            resetOnSuccess: true,
-        }),
-    }
-}
-```
-
-A form may be submitted using the `post`, `put`, or `delete` methods. All of the data specified during the form's creation will be automatically included in the request. In addition, [Inertia request options](https://inertiajs.com/requests) may also be specified:
-
-```js
-this.form.post('/user/profile-information', {
-    preserveScroll: true
-})
-```
-
-Form error messages may be accessed using the `form.error` method. This method will return the first available error message for the given field:
-
-```html
-<jet-input-error :message="form.error('email')" class="mt-2" />
-```
-
-A flattened list of all validation errors may be accessed using the `errors` method. This method may prove useful when attempting to display the error message in a simple list:
-
-```html
-<li v-for="error in form.errors()">
-    {{ error }}
-</li>
-```
-
-Additional information about the form's current state is available via the `recentlySuccessful` and `processing` methods. These methods are helpful for dictating disabled or "in progress" UI states:
-
-```html
-<jet-action-message :on="form.recentlySuccessful" class="mr-3">
-    Saved.
-</jet-action-message>
-
-<jet-button :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-    Save
-</jet-button>
-```
-
-To learn more about using Jetstream's Inertia form helpers, you are free to review the Inertia pages created during Jetstream's installation. These pages are located within your application's `resources/js/Pages` directory.
-
 ## Modals
 
 Jetstream's Inertia stack also includes two modal components: `DialogModal` and `ConfirmationModal`. The `ConfirmationModal` may be used when confirming destructive actions such as the deletion of resources, while the `DialogModal` is a more generic modal window that may be used at any time.
