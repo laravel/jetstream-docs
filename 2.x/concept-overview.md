@@ -4,21 +4,21 @@
 
 ## Introduction
 
-Laravel Jetstream's architecture is a little different than other Laravel application starter kits such as [Laravel Breeze](https://laravel.com/docs/starter-kits). In this documentation, we'll cover some of the high-level concepts that will help you understand how Laravel Jetstream is constructed.
+Laravel Jetstream's architecture is a little different from other Laravel application starter kits such as [Laravel Breeze](https://laravel.com/docs/starter-kits). In this documentation, we'll cover some of the high-level concepts that will help you understand how Laravel Jetstream is constructed.
 
 ## Laravel Fortify
 
 Under the hood, the authentication portions of Jetstream are powered by [Laravel Fortify](https://github.com/laravel/fortify), which is a front-end agnostic, "headless" authentication backend for Laravel.
 
-Fortify registers the routes and controllers needed to implement all of Laravel's authentication features, including login, registration, password reset, email verification, and more. After installing Fortify, you may run the `route:list` Artisan command to see the routes that Fortify has registered.
+Fortify registers the routes and controllers needed to implement all of Laravel's authentication features, including login, registration, password reset, email verification, and more. After installing Fortify, you may run the `route:list` Artisan command to see the routes registered by Fortify.
 
-Since Fortify does not provide its own user interface, it is meant to be paired with your own user interface which makes requests to the routes it registers. Laravel Jetstream is our first-party implementation of a user interface built on top of the Fortify authentication backend.
+Since Fortify does not provide a user interface, it is meant to be paired with your user interface which makes requests to the routes it registers. Laravel Jetstream is our first-party implementation of a user interface built on top of the Fortify authentication backend.
 
 #### Fortify Configuration
 
 When Jetstream is installed, a `config/fortify.php` configuration file is installed into your application. Within this configuration file, you can customize various aspects of Fortify's behavior, such as the authentication guard that should be used, where users should be redirected after authentication, and more.
 
-Within the `fortify` configuration file, you can also disable entire features of Fortify, such as the ability to update profile information or passwords.
+Within the `fortify` configuration file, you can also disable the entire features of Fortify, such as the ability to update profile information or passwords.
 
 ## Actions
 
@@ -40,7 +40,7 @@ After installation, your Jetstream application will contain two "layouts". First
 
 #### The Guest / Authentication Layout
 
-In addition to the application layout, Jetstream creates a "guest" layout that is used to define the layout for Jetstream's authentication related pages, such as your application's login, registration, and password reset pages. When using the Livewire stack, this layout is defined at `resources/views/layouts/guest.blade.php` and rendered by the `App\View\Components\GuestLayout` class. When using the Inertia stack, this layout is defined at `resources/js/Layouts/GuestLayout.vue`.
+In addition to the application layout, Jetstream creates a "guest" layout that is used to define the layout for Jetstream's authentication-related pages, such as your application's login, registration, and password reset pages. When using the Livewire stack, this layout is defined at `resources/views/layouts/guest.blade.php` and rendered by the `App\View\Components\GuestLayout` class. When using the Inertia stack, this layout is defined at `resources/js/Layouts/GuestLayout.vue`.
 
 ### Dashboard
 
