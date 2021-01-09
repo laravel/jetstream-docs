@@ -4,9 +4,9 @@
 
 ## Introduction
 
-After installing Jetstream, you may wonder how to actually start building your application. Thankfully, since Jetstream handles the configuration of all of the initial authentication and application scaffolding, you can get started right away!
+After installing Jetstream, you can start building your application right away since the configuration of all of the initial authentication and application scaffolding has been automatically handled.
 
-After installing Jetstream, the code is yours. The templates belong to your application and can be modified as you see fit. Jetstream is just a starting point. You do not need to worry about keeping your user interface "compatible" with future Jetstream releases because each Jetstream release is simply an entirely new iteration of the starter kit. In other words, Jetstream is not a package or administration dashboard that you will "update" in the future. It is a starter kit scaffolding for Laravel and, after it is installed, the templates are entirely yours to maintain.
+After installing Jetstream, the code is yours. The templates belong to your application and can be modified as you see fit. Jetstream is just a starting point. You do not need to worry about keeping your user interface compatibility with future Jetstream releases because each Jetstream release is simply an entirely new iteration of the starter kit. In other words, Jetstream is not a package or administration dashboard that you will "update" in the future. It is a starter kit scaffolding for Laravel whose templates are entirely yours to maintain after its installation.
 
 :::tip Livewire & Inertia
 
@@ -27,13 +27,13 @@ By default, Jetstream's top navigation menu includes a link to the application d
 
 ## User Profile
 
-When building a Jetstream application, it's likely that you will need to add your own forms and panels to the user profile management screen. By default, the user's profile screen contains panels to update the user's contact information, password, manage their two-factor authentication settings, and more. However, you're free to add your own additional panels to this page. To do so, you may simply edit the templates that define the page.
+When building a Jetstream application, you will likely need to add your own forms and panels to the user profile management screen. By default, the user's profile screen contains panels to update the user's contact information, password, manage their two-factor authentication settings, and more. However, you're free to add your own additional panels to this page. To do so, you may simply edit the templates that define the page.
 
 When using Livewire, the user's profile management screen is defined by the `resources/views/profile/show.blade.php` Blade template. When using Inertia, this screen is rendered by the `resources/js/Pages/Profile/Show.vue` component. To add additional panels or forms to the user profile, you may simply edit these templates as necessary for your application.
 
 ## Team Management
 
-You may also need to add additional forms and panels to the team management screens rendered by Jetstream. These include the "team settings" screen for managing existing teams as well as the "create team" screen that is rendered when a user is creating a new team.
+You may also need to add additional forms and panels to the team management screens rendered by Jetstream. These include the "team settings" screen for managing existing teams, as well as the "create team" screen that is rendered when a user is creating a new team.
 
 ### Create Team Screen
 
