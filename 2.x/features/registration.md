@@ -84,7 +84,7 @@ Fortify::registerView(function () {
 
 ## Requiring Terms Of Service / Privacy Policy Approval
 
-Many application require users to accept their terms of service / privacy policy during registration. Jetstream allows you to easily enable this requirement for your own application, as well as provides a convenient way of writing these documents using Markdown.
+Many applications require users to accept their terms of service / privacy policy during registration. Jetstream allows you to easily enable this requirement for your own application, as well as provides a convenient way of writing these documents using Markdown.
 
 To get started, enable this feature in your application's `config/jetstream.php` configuration file:
 
