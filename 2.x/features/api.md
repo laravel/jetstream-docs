@@ -4,7 +4,7 @@
 
 ## Introduction
 
-Jetstream includes first-party integration with [Laravel Sanctum](https://laravel.com/docs/sanctum). Laravel Sanctum provides a featherweight authentication system for SPAs (single page applications), mobile applications, and simple, token based APIs. Sanctum allows each user of your application to generate multiple API tokens for their account. These tokens may be granted abilities / permissions which specify which actions the tokens are allowed to perform.
+Jetstream includes first-party integration with [Laravel Sanctum](https://laravel.com/docs/sanctum). Laravel Sanctum provides a featherweight authentication system for SPAs (single page applications), mobile applications, and simple, token-based APIs. Sanctum allows each user of your application to generate multiple API tokens for their account. These tokens may be granted abilities / permissions which specify which actions the tokens are allowed to perform.
 
 ![Screenshot of Laravel Jetstream API](./../../assets/img/api.png)
 
@@ -57,15 +57,15 @@ return $request->user()->id === $post->user_id &&
 
 ### First-Party UI Initiated Requests
 
-When a user makes a request to a route within your `routes/web.php` file, the request will typically be authenticated by Sanctum through a authenticated session cookie based guard. In most Laravel applications, this is the `web` guard.
+When a user makes a request to a route within your `routes/web.php` file, the request will typically be authenticated by Sanctum through an authenticated session cookie based guard. In most Laravel applications, this is the `web` guard.
 
-When the user is making a first-party request through the application UI, the `tokenCan` method will always return `true`. Remember, this does not necessarily mean that your application has to allow the user to perform the action. Typically, your policies will determine if the token has been granted the permission to perform the abilities **as well as check that the user instance itself should be allowed to perform the action**.
+When the user is making a first-party request through the application UI, the `tokenCan` method will always return `true`. Remember, this does not necessarily mean that your application has to allow the user to perform the action. Typically, your policies will determine if the token has been granted permission to perform the abilities **as well as check that the user instance itself should be allowed to perform the action**.
 
-For example, in the case of updating a blog post, this might mean checking that token is authorized to update posts **and** that the post belongs to the user:
+For example, in the case of updating a blog post, this might mean checking that the token is authorized to update posts **and** that the post belongs to the user:
 
 ```php
 return $request->user()->id === $post->user_id &&
        $request->user()->tokenCan('post:update')
 ```
 
-At first, allowing the `tokenCan` method to be called and always return `true` for first-party UI initiated requests may seem strange; however, it is convenient to be able to always assume an API token is available and can be inspected via the `tokenCan` method. This means that you may always call the `tokenCan` method within your application's authorizations policies without worrying about whether the request was triggered from your application's UI or was initiated by one of your API's third-party consumers.
+At first, allowing the `tokenCan` method to be called and always return `true` for first-party UI-initiated requests may seem strange; however, it is convenient to be able to always assume an API token is available and can be inspected via the `tokenCan` method. This means that you may always call the `tokenCan` method within your application's authorization policies without worrying about whether the request was triggered from your application's UI or was initiated by one of your API's third-party consumers.
