@@ -87,7 +87,7 @@ A user may switch their current team via the "team switcher" menu available with
 
 ### The Team Object
 
-The team object that is accessed via `$user->currentTeam` or Jetstream's other team related Eloquent queries provides a variety of useful methods for inspecting the team's attributes and relationships:
+The team object that is accessed via `$user->currentTeam` or Jetstream's other team-related Eloquent queries provides a variety of useful methods for inspecting the team's attributes and relationships:
 
 ```php
 // Access the team's owner...
