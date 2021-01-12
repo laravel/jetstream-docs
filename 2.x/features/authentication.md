@@ -18,7 +18,7 @@ Within the `fortify` configuration file, you can also disable entire features of
 
 ## Views / Pages
 
-When using the Livewire stack, the login view is displayed using the `resources/views/auth/login.blade.php` Blade template. When using the Inertia stack, this view is displayed using the `resources/js/Pages/Auth/Login.vue` template. The directories that contain these views also contain other authentication related views / pages for your application.
+When using the Livewire stack, the login view is displayed using the `resources/views/auth/login.blade.php` Blade template. When using the Inertia stack, this view is displayed using the `resources/js/Pages/Auth/Login.vue` template. The directories that contain these views also contain other authentication-related views / pages for your application.
 
 ### Customizing The Authentication Views
 

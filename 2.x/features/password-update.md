@@ -14,7 +14,7 @@ Like most of Jetstream's features, the underlying logic used to implement the fe
 
 The `App\Actions\Fortify\UpdateUserPassword` class will be invoked when the user updates their password. This action is responsible for validating the input and updating the user's password.
 
-This action utilizes the `App\Actions\Fortify\PasswordValidationRules` trait to determine the validation rules that will be applied to the password. Customizing this trait will uniformly affect the validation rules applied to the password when the user registers, resets their password, or updates their password.
+This action utilizes the `App\Actions\Fortify\PasswordValidationRules` trait to determine the validation rules that will be applied to the password. Customizing this trait will uniformly affect the validation rules applied to the password when the user registers, resets or updates their password.
 
 ### Password Validation Rules
 
@@ -44,6 +44,6 @@ Of course, these methods may be chained to define the password validation rules 
 
 ## Views / Pages
 
-Typically, the views and pages for these features should not require customization, as they are already feature complete. However, their locations are described below in case you need to make small presentation adjustments to these pages.
+Typically, the views and pages for these features should not require customization, as they are already feature-complete. However, their locations are described below in case you need to make small presentation adjustments to these pages.
 
 When using the Livewire stack, the password update view is displayed using the `resources/views/profile/update-password-form.blade.php` Blade template. When using the Inertia stack, this view is displayed using the `resources/js/Pages/Profile/UpdatePasswordForm.vue` template.

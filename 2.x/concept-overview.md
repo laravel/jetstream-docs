@@ -40,7 +40,7 @@ After installation, your Jetstream application will contain two "layouts". First
 
 #### The Guest / Authentication Layout
 
-In addition to the application layout, Jetstream creates a "guest" layout that is used to define the layout for Jetstream's authentication related pages, such as your application's login, registration, and password reset pages. When using the Livewire stack, this layout is defined at `resources/views/layouts/guest.blade.php` and rendered by the `App\View\Components\GuestLayout` class. When using the Inertia stack, this layout is defined at `resources/js/Layouts/GuestLayout.vue`.
+In addition to the application layout, Jetstream creates a "guest" layout that is used to define the layout for Jetstream's authentication-related pages, such as your application's login, registration, and password reset pages. When using the Livewire stack, this layout is defined at `resources/views/layouts/guest.blade.php` and rendered by the `App\View\Components\GuestLayout` class. When using the Inertia stack, this layout is defined at `resources/js/Layouts/GuestLayout.vue`.
 
 ### Dashboard
 

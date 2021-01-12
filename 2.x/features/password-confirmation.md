@@ -50,7 +50,7 @@ That view that renders the Livewire stack's password confirmation screen is loca
 
 #### Ensuring The Password Has Been Confirmed
 
-Next, Livewire components that contains an action that should require password confirmation before being invoked should use the `Laravel\Jetstream\ConfirmsPasswords` trait.
+Next, Livewire components that contain an action that should require password confirmation before being invoked should use the `Laravel\Jetstream\ConfirmsPasswords` trait.
 
 After adding this trait to a component, you should call the `ensurePasswordIsConfirmed` method within any Livewire action that requires password confirmation. This should be done at the very beginning of the relevant action method:
 
@@ -70,7 +70,7 @@ public function enableAdminMode()
 
 :::warning Password Confirmation Expiration
 
-Once the user has confirmed their password, they will not be required to re-enter their password until the number of seconds defined by the your application's `auth.password_timeout` configuration option have elapsed:
+Once the user has confirmed their password, they will not be required to re-enter their password until the number of seconds defined by your application's `auth.password_timeout` configuration option has elapsed:
 :::
 
 ### Redirect Password Confirmation Via Inertia
@@ -93,7 +93,7 @@ That page that renders the Inertia's stack's password confirmation screen is loc
 
 :::warning Password Confirmation Expiration
 
-Once the user has confirmed their password, they will not be required to re-enter their password until the number of seconds defined by the your application's `auth.password_timeout` configuration option have elapsed:
+Once the user has confirmed their password, they will not be required to re-enter their password until the number of seconds defined by your application's `auth.password_timeout` configuration option has elapsed:
 :::
 
 ## Modal Password Confirmation
@@ -142,7 +142,7 @@ public function enableAdminMode()
 
 :::warning Password Confirmation Expiration
 
-Once the user has confirmed their password, they will not be required to re-enter their password until the number of seconds defined by the your application's `auth.password_timeout` configuration option have elapsed:
+Once the user has confirmed their password, they will not be required to re-enter their password until the number of seconds defined by your application's `auth.password_timeout` configuration option has elapsed:
 :::
 
 ### Modal Password Confirmation Via Inertia
@@ -184,12 +184,12 @@ Route::post('/admin-mode', function () {
 
 :::warning Password Confirmation Expiration
 
-Once the user has confirmed their password, they will not be required to re-enter their password until the number of seconds defined by the your application's `auth.password_timeout` configuration option have elapsed:
+Once the user has confirmed their password, they will not be required to re-enter their password until the number of seconds defined by your application's `auth.password_timeout` configuration option has elapsed:
 :::
 
 ## Customizing How Passwords Are Confirmed
 
-Sometimes, you may wish to customize how the user's password is validated during confirmation. To do so, you may use the `Fortify::confirmPasswordsUsing` method. This method accepts a closure which receives the authenticated user instance and the `password` input field of the request. The closure should return `true` if the password is valid for the given user. Typically, this method should be called from the `boot` method of your `JetstreamServiceProvider`:
+Sometimes, you may wish to customize how the user's password is validated during confirmation. To do so, you may use the `Fortify::confirmPasswordsUsing` method. This method accepts a closure that receives the authenticated user instance and the `password` input field of the request. The closure should return `true` if the password is valid for the given user. Typically, this method should be called from the `boot` method of your `JetstreamServiceProvider`:
 
 ```php
 use Illuminate\Support\Facades\Hash;
