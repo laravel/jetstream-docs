@@ -18,7 +18,7 @@ Most Jetstream features can be customized via action classes. However, for secur
 
 ## Views / Pages
 
-Typically, the two-factor authentication feature's corresponding views and pages should not require customization as they are already feature complete. However, their locations are described below in case you need to make small presentation adjustments to these pages.
+Typically, the two-factor authentication feature's corresponding views and pages should not require customization as they are already feature-complete. However, their locations are described below in case you need to make small presentation adjustments to these pages.
 
 When using the Livewire stack, the two-factor authentication management view is displayed using the `resources/views/profile/two-factor-authentication-form.blade.php` Blade template. When using the Inertia stack, this view is displayed using the `resources/js/Pages/Profile/TwoFactorAuthenticationForm.vue` template.
 
