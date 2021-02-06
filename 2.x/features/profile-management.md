@@ -46,6 +46,12 @@ After enabling the profile photo feature, you should execute the `storage:link` 
 ```bash
 php artisan storage:link
 ```
+Next, you need to create a migration, to allow you to add the profile photo path to the users table. You could run the following command:
+
+```bash
+php artisan make:migration "add profile photo path to users table"
+```
+You would then add a 'profile_photo_path' column to your users table, and run the migration.
 
 ### Managing Profile Photos
 
