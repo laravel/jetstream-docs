@@ -62,5 +62,5 @@ From here you can now use the notification within your Livewire components:
 session()->flash('flash.banner', 'Yay it works!');
 session()->flash('flash.bannerStyle', 'success');
 
-returm $this->redirect('/');
+return $this->redirect('/');
 ```
