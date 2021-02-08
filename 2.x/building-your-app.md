@@ -49,18 +49,19 @@ When using Livewire, the team settings screen is defined by the `resources/views
 
 ### Banner Alerts
 
-Jetstream includes a notification banner which can be seen when you publish the components, you may use the `vendor:publish` Artisan command:
+Jetstream includes a notification banner which can be displayed at the top of your application's UI. If you are using the Livewire stack, you should ensure this notification banner has been published using the `vendor:publish` command:
 
 ```bash
 php artisan vendor:publish --tag=jetstream-views
 ```
 
-Upon publishing, you will see a component `vendor/components/banner.blade.php` this holds the styles and core of the component. In your `layouts/app.blade.php` file you should add `<x-jet-banner />` to render this component.
-From here you can now use the notification within your Livewire components:
+After publishing the Jetstream components, your application will contain the banner component at `vendor/components/banner.blade.php`. If you are using the Inertia stack, your banner component will be contained within the `Banner.vue` Vue component.
 
-```bash
-session()->flash('flash.banner', 'Yay it works!');
-session()->flash('flash.bannerStyle', 'success');
+To instruct Jetstream to display the banner, you must flash a `flash.banner` message to the session. In addition to the banner message, you may also instruct Jetstream to display the banner with a `success` style or a `danger` style:
+
+```php
+$request->session()->flash('flash.banner', 'Yay it works!');
+$request->session()->flash('flash.bannerStyle', 'success');
 
 return $this->redirect('/');
 ```
