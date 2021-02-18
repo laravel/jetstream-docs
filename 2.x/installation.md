@@ -12,6 +12,10 @@ composer require laravel/jetstream
 
 After installing the Jetstream package, you may execute the `jetstream:install` Artisan command. This command accepts the name of the stack you prefer (`livewire` or `inertia`). In addition, you may use the `--teams` switch to enable team support. **You are highly encouraged to read through the entire documentation of [Livewire](https://laravel-livewire.com) or [Inertia](https://inertiajs.com) before beginning your Jetstream project.**
 
+::: warning Something to keep in mind
+Jetstream is meant for brand new Laravel applications and we don't recommend installing it in existing applications.
+:::
+
 #### Install Jetstream With Livewire
 
 ```bash
