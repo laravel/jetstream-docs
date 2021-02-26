@@ -111,7 +111,7 @@ $team->userHasPermission($user, $permission) : bool
 
 ## Member Management
 
-Team members may be added and removed from a team via Jetstream's "Team Settings" view.
+Team members may be added and removed from a team via Jetstream's "Team Settings" view. By default, only team owners can manage team membership. This restriction is defined in the `App\Policies\TeamPolicy` class. Naturally, you are free to modify this policy as you see fit.
 
 ### Member Management Actions
 
