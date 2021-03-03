@@ -33,6 +33,8 @@ php artisan jetstream:install inertia
 php artisan jetstream:install inertia --teams
 ```
 
+Both of these commands, in addition to installing the necessary code to make them work, include a suite of Feature tests you are free to use, or discard, as you see fit. Naturally, we recommend you keep them. We are mentioning this here because you may be surprised to find your `tests/Feature` folder populated with about a dozen tests following installation.
+
 ### Finalizing The Installation
 
 After installing Jetstream, you should install and build your NPM dependencies and migrate your database:
