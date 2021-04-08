@@ -47,7 +47,7 @@ php artisan migrate
 
 ## Application Logo
 
-After installing Jetstream, you may have noticed that the Jetstream logo is utilized on Jetstream's authentication pages as well as your application's top navigation bar. You may easily customize the logo by modifying two Jetstream components.
+After installing Jetstream, you may have noticed that the Jetstream logo is utilized on Jetstream's authentication pages as well as your application's top navigation bar. You may easily customize the logo by modifying three Jetstream components.
 
 ### Livewire
 
