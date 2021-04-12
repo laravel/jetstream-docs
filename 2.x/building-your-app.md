@@ -63,5 +63,12 @@ To instruct Jetstream to display the banner, you must flash a `flash.banner` mes
 $request->session()->flash('flash.banner', 'Yay it works!');
 $request->session()->flash('flash.bannerStyle', 'success');
 
+
 return $this->redirect('/');
+```
+
+In same cases where you need to flash the banner from a blade component inside another blade component or you don't want to realod or redirect the page, you may use
+```
+$this->dispatchBrowserEvent('banner-message', ['style' => 'danger','message' => 'Profile Is Not Updated!']);
+$this->dispatchBrowserEvent('banner-message', ['style' => 'success','message' => 'Profile Is Updated!']);
 ```
