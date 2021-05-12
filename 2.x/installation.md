@@ -35,6 +35,25 @@ php artisan jetstream:install inertia
 php artisan jetstream:install inertia --teams
 ```
 
+### Installing Jetstream with the Laravel Installer
+
+If you use to create your Laravel projects with the [Laravel Installer](https://laravel.com/docs/#the-laravel-installer), you can install Laravel Jetstream right away when creating the project.
+
+```bash
+laravel new [project-name] --jet
+```
+With this command the installer it's going to create your new project and ask you to choose the desired stack: Livewire or Inertia. You can skip this step by adding the desired stack like a flag:
+
+#### Installing Jetstream with the Laravel Installer - Livewire Stack
+```bash
+laravel new [project-name] --jet --stack=livewire
+```
+
+#### Installing Jetstream with the Laravel Installer - Inertia Stack
+```bash
+laravel new [project-name] --jet --stack=inertia
+```
+
 ### Finalizing The Installation
 
 After installing Jetstream, you should install and build your NPM dependencies and migrate your database:
