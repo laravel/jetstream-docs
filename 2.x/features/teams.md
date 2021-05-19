@@ -23,6 +23,25 @@ The team creation view is accessed via the top-right user navigation dropdown me
 
 Like many other Jetstream features, team creation and deletion logic may be customized by modifying the relevant action classes within your `app/Actions/Jetstream` directory. These actions include `CreateTeam`, `UpdateTeamName`, and `DeleteTeam`. Each of these actions is invoked when their corresponding task is performed by the user in the application's UI. You are free to modify these actions as required based on your application's needs.
 
+#### Custom redirects
+
+If you need to override default redirects you can use ```$redirectTo``` property inside your action classes:
+
+```php
+
+class CreateTeam implements CreatesTeams
+{
+    public $redirectTo = '';
+
+    public function __construct() {
+        $this->redirectTo = route('your.route');
+    }
+    
+    ...
+}
+
+```
+ 
 ### Views / Pages
 
 When using the Livewire stack, the team creation view is displayed using the `resources/views/teams/create-team-form.blade.php` Blade template. When using the Inertia stack, this view is displayed using the `resources/js/Pages/Teams/CreateTeamForm.vue` template. Additional input fields that are specified on the team creation forms will be provided to the `App\Actions\Jetstream\CreateTeam` action class when the user creates a team.
