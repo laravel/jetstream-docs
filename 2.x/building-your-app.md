@@ -63,5 +63,5 @@ To instruct Jetstream to display the banner, you must flash a `flash.banner` mes
 $request->session()->flash('flash.banner', 'Yay it works!');
 $request->session()->flash('flash.bannerStyle', 'success');
 
-return $this->redirect('/');
+return redirect('/');
 ```
