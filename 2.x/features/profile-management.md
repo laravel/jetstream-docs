@@ -16,7 +16,7 @@ Therefore, any customizations you wish to make to your application's management 
 
 :::tip Managing Additional Information
 
-If you need to manage additional information about the user, you can do more than just amending the provided "Profile Information" card. You can add as many additional UI elements and forms as you need to the user's entire profile dashboard.
+If you need to manage additional information about the user, you are not restricted to just amending the provided "Profile Information" card. You can add as many additional UI elements and forms as needed within the user's profile dashboard.
 :::
 
 ## Views / Pages
