@@ -16,7 +16,7 @@ Therefore, any customizations you wish to make to your application's management 
 
 :::tip Managing Additional Information
 
-If you need to manage additional information about the user, do not feel obligated to add additional to the "Profile Information" card within your Jetstream application's UI. You are free to add additional UI elements and forms to user's profile dashboard that are specific to the information you wish to manage.
+If you need to manage additional information about the user, you can do more than just amending the provided "Profile Information" card. You can add as many additional UI elements and forms as you need to the user's entire profile dashboard.
 :::
 
 ## Views / Pages
