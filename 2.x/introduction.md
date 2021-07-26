@@ -35,5 +35,5 @@ The Inertia stack is a great choice if you are comfortable with and enjoy using 
 
 :::tip Inertia Screencasts
 
-If you're new to Inertia, checkout the [screencasts available on the Laracasts website](https://laracasts.com/series/learn-inertia-with-jeffrey)
+If you're new to Inertia, check out the [screencasts available on the Laracasts website](https://laracasts.com/series/learn-inertia-with-jeffrey).
 :::
