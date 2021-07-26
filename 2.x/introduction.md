@@ -33,4 +33,7 @@ In other words, this stack gives you the full power of Vue.js without the comple
 
 The Inertia stack is a great choice if you are comfortable with and enjoy using Vue.js as your templating language.
 
+:::tip Inertia Screencasts
 
+If you're new to Inertia, check out the [screencasts available on the Laracasts website](https://laracasts.com/series/learn-inertia-with-jeffrey).
+:::
