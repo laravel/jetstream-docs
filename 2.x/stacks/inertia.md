@@ -103,3 +103,15 @@ To illustrate the use of modals, consider the following modal that confirms a us
 ```
 
 As you can see, the modal's open / close state is determined by a `show` property that is declared on the component. The modal's contents may be specified by hydrating three slots: `title`, `content`, and `footer`.
+
+## Routes
+
+You may need to refer to your named routes in your application, either in your templates or in your application JavaScript. Jetstream's Intertia stack includes Tighten's Ziggy library as a JavaScript alternative to the Laravel `route()` helper.
+
+You can refer to their [usage documentation](https://github.com/tighten/ziggy#usage) for the complete guide, but some common examples can be found in the Jetstream Vue files, including `Layouts/AppLayout.vue`:
+
+```html
+<jet-nav-link :href="route('dashboard')" :active="route().current('dashboard')">
+    Dashboard
+</jet-nav-link>
+```
