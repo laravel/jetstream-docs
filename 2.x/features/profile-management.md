@@ -55,8 +55,22 @@ This trait contains methods such as `updateProfilePhoto`, `getProfilePhotoUrlAtt
 
 The `updateProfilePhoto` method is the primary method used to store profile photos and is called by your application's `App\Actions\Fortify\UpdateUserProfileInformation` action class.
 
-:::tip Laravel Vapor
+If you would like to use an AWS S3 bucket to store profile photos, make sure that you have set 's3' as the disk of choice in `App\config\jetstream.php`:
 
+Change:
+```json
+'profile_photo_disk' => 'local'
+```
+To:
+```json
+'profile_photo_disk' => 's3'
+```
+
+:::tip Permissions
+You may also want to investigate and decide which permissions you would like to apply to the bucket and individual image objects. You may find the [AWS documentation](https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingObjects.html) helpful.
+:::
+
+:::tip Laravel Vapor
 By default, the `s3` disk will be used to store profile photos when your Jetstream application is running within [Laravel Vapor](https://vapor.laravel.com).
 :::
 
