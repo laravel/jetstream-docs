@@ -12,7 +12,7 @@ This feature utilizes Laravel's built-in `Illuminate\Session\Middleware\Authenti
 
 :::warning Session Driver
 
-To utilize browser session management within Jetstream, ensure that your session configuration's driver (or SESSION_DRIVER environment variable) is set to 'database'.
+To utilize browser session management within Jetstream, ensure that your session configuration's `driver` (or `SESSION_DRIVER` environment variable) is set to 'database'.
 :::
 
 ## Actions
