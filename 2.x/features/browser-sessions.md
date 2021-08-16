@@ -10,6 +10,11 @@ This feature utilizes Laravel's built-in `Illuminate\Session\Middleware\Authenti
 
 ![Screenshot of Browser Sessions](./../../assets/img/browser-sessions.png)
 
+:::warning Session Driver
+
+To utilize browser session management within Jetstream, ensure that your session configuration's driver (or SESSION_DRIVER environment variable) is set to 'database'.
+:::
+
 ## Actions
 
 Most Jetstream features can be customized via action classes. However, for security, Jetstream's browser session services are encapsulated within Jetstream and should not require customization.
