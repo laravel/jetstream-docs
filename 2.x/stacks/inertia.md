@@ -106,7 +106,7 @@ As you can see, the modal's open / close state is determined by a `show` propert
 
 ## Routes
 
-Jetstream's Intertia stack includes Tighten's Ziggy library as a JavaScript alternative to the Laravel `route()` helper. You can refer to the [Ziggy usage documentation](https://github.com/tighten/ziggy#usage) for a complete guide on using this library, but some common examples can be found in Jetstream's own Vue files, including `Layouts/AppLayout.vue`:
+Jetstream's Inertia stack includes Tighten's Ziggy library as a JavaScript alternative to the Laravel `route()` helper. You can refer to the [Ziggy usage documentation](https://github.com/tighten/ziggy#usage) for a complete guide on using this library, but some common examples can be found in Jetstream's own Vue files, including `Layouts/AppLayout.vue`:
 
 ```html
 <jet-nav-link :href="route('dashboard')" :active="route().current('dashboard')">
