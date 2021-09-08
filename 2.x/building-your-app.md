@@ -65,3 +65,19 @@ $request->session()->flash('flash.bannerStyle', 'success');
 
 return redirect('/');
 ```
+
+You can also hook into the banner inline without having to use the request:
+
+```php
+public function cancel($name) 
+{
+    $cancelled = Auth::user()->currentTeam->subscription($name)->cancel();
+    
+    if($cancelled->ends_at){
+      return redirect()->route('subscriptions')->banner('Subscriptions successfully cancelled!');
+    }
+    else{
+      return redirect()->route('subscriptions')->dangerBanner('Subscriptions not cancelled!');
+    }
+}
+```
