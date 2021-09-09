@@ -66,18 +66,10 @@ $request->session()->flash('flash.bannerStyle', 'success');
 return redirect('/');
 ```
 
-You can also hook into the banner inline without having to use the request:
+You may also instruct Jetstream to display the banner by invoking the `banner` or `dangerBanner` methods on a redirect response instance:
 
 ```php
-public function cancel($name) 
-{
-    $cancelled = Auth::user()->currentTeam->subscription($name)->cancel();
-    
-    if($cancelled->ends_at){
-      return redirect()->route('subscriptions')->banner('Subscriptions successfully cancelled!');
-    }
-    else{
-      return redirect()->route('subscriptions')->dangerBanner('Subscriptions not cancelled!');
-    }
-}
+return redirect()->route('subscriptions')->banner('Subscription created successfully.');
+
+return redirect()->route('subscriptions')->dangerBanner('Subscription cancellation failed.');
 ```
