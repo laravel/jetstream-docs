@@ -64,3 +64,14 @@ To illustrate the use of modals, consider the following modal that confirms a us
 As you can see, the modal's open / close state is determined by a `wire:model` property that is declared on the component. The property's name should correspond to a boolean property on your Livewire component's corresponding PHP class. Typically, you will set this property to `true` when the user clicks a UI element in your application that should open the modal. Of course, the property should be set to `false` when you are ready to close the modal.
 
 The modal's contents may be specified by hydrating three Blade component slots: `title`, `content`, and `footer`.
+
+### Focus Shifting
+
+In some instances, you may want automatically move the page focus to the first focusable element in the modal. To enable automatic focus shitfting, you may set the `focusable` property to `true` when you declare your modal. This will also "trap" focus within the modal. For example:
+
+```html
+<x-jet-confirmation-modal wire:model="confirmingUserDeletion" :focusable="true">
+    ...
+</x-jet-confirmation-modal>
+```    
+
