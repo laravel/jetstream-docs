@@ -1,3 +1,1 @@
-# Jetstream Docs
-
-The Laravel Jetstream documentation.
+<meta http-equiv="refresh" content="0;url=/2.x/introduction.html" />
