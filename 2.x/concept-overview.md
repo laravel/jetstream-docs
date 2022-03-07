@@ -4,7 +4,7 @@
 
 ## Introduction
 
-Laravel Jetstream's architecture is a little different than other Laravel application starter kits such as [Laravel Breeze](https://laravel.com/docs/starter-kits). In this documentation, we'll cover some of the high-level concepts that will help you understand how Laravel Jetstream is constructed.
+Laravel Jetstream's architecture is a little different from other Laravel application starter kits such as [Laravel Breeze](https://laravel.com/docs/starter-kits). In this documentation, we'll cover some of the high-level concepts that will help you understand how Laravel Jetstream is constructed.
 
 ## Laravel Fortify
 
