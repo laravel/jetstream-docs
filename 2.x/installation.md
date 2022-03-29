@@ -39,6 +39,12 @@ php artisan jetstream:install inertia
 php artisan jetstream:install inertia --teams
 ```
 
+The Inertia stack may also be installed with [SSR support](https://inertiajs.com/server-side-rendering):
+
+```bash
+php artisan jetstream:install inertia --ssr
+```
+
 ### Finalizing The Installation
 
 After installing Jetstream, you should install and build your NPM dependencies and migrate your database:
