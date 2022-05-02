@@ -47,7 +47,7 @@ When team support is enabled, Jetstream includes a screen that allows users to m
 
 When using Livewire, the team settings screen is defined by the `resources/views/teams/show.blade.php` Blade template. When using Inertia, this screen is rendered by the `resources/js/Pages/Teams/Show.vue` component.
 
-### Banner Alerts
+## Banner Alerts
 
 Jetstream includes a notification banner which can be displayed at the top of your application's UI. If you are using the Livewire stack, you should ensure this notification banner has been published using the `vendor:publish` command:
 
