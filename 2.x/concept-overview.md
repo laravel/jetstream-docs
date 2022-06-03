@@ -58,20 +58,17 @@ Once these components have been published, you are free to modify them as necess
 
 ## Tailwind
 
-During installation, Jetstream will scaffold your application's integration with the Tailwind CSS framework. Specifically, a `webpack.mix.js` file and `tailwind.config.js` file will be created. These two files are used to build your application's compiled CSS output. You are free to modify these files as needed for your application.
+During installation, Jetstream will scaffold your application's integration with the Tailwind CSS framework. Specifically, a `postcss.config.js` file and `tailwind.config.js` file will be created. These two files are used to build your application's compiled CSS output. You are free to modify these files as needed for your application.
 
 In addition, your `tailwind.config.js` file has been pre-configured to support PurgeCSS with the relevant directories properly specified depending on your chosen Jetstream stack.
 
-Your application's `package.json` file is already scaffolded with NPM commands that you may use to compile your assets. For more information on compiling your application's assets, consult the [Laravel Mix documentation](https://laravel.com/docs/mix):
+Your application's `package.json` file is already scaffolded with NPM commands that you may use to compile your assets. For more information on compiling your application's assets, consult the [Vite documentation](https://laravel.com/docs/vite):
 
 ```bash
-# Compile your CSS / JavaScript for development...
+# Compile your CSS / JavaScript for development and recompile on change...
 npm run dev
 
 # Compile your CSS / JavaScript for production...
-npm run prod
-
-# Compile your CSS / JavaScript for development and recompile on change...
-npm run watch
+npm run build
 ```
 
