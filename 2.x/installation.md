@@ -51,7 +51,7 @@ After installing Jetstream, you should install and build your NPM dependencies a
 
 ```bash
 npm install
-npm run dev
+npm run build
 php artisan migrate
 ```
 
@@ -76,5 +76,5 @@ If you are using the Inertia stack, you should customize the SVGs located in `re
 After customizing these components, you should rebuild your assets:
 
 ```bash
-npm run dev
+npm run build
 ```
