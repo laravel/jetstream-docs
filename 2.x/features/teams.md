@@ -202,7 +202,7 @@ When building a Jetstream application that provides both API support and team su
  * @param  \App\Models\Flight  $flight
  * @return bool
  */
-public function view(User $user, Flight $flight)
+public function update(User $user, Flight $flight)
 {
     return $user->belongsToTeam($flight->team) &&
            $user->hasTeamPermission($flight->team, 'flight:view') &&
