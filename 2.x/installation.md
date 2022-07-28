@@ -45,7 +45,7 @@ The Inertia stack may also be installed with SSR support:
 php artisan jetstream:install inertia --ssr
 ```
 
-You can read more about running the SSR server in the [Laravel Vite plugin documentation](https://laravel.com/docs/vite#ssr) and over on the [Inertia documentation site](https://inertiajs.com/server-side-rendering).
+You can read more about running the SSR server in the [Laravel Vite plugin documentation](https://laravel.com/docs/vite#ssr) and within the [Inertia documentation](https://inertiajs.com/server-side-rendering).
 
 ### Finalizing The Installation
 
