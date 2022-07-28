@@ -39,11 +39,13 @@ php artisan jetstream:install inertia
 php artisan jetstream:install inertia --teams
 ```
 
-The Inertia stack may also be installed with [SSR support](https://inertiajs.com/server-side-rendering):
+The Inertia stack may also be installed with SSR support:
 
 ```bash
 php artisan jetstream:install inertia --ssr
 ```
+
+You can read more about running the SSR server in the [Laravel Vite plugin](https://laravel.com/docs/vite#ssr) and [Inertia](https://inertiajs.com/server-side-rendering) documentation.
 
 ### Finalizing The Installation
 
