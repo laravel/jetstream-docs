@@ -73,7 +73,7 @@ Next, you should customize the SVGs located in the `resources/views/vendor/jetst
 
 ### Inertia
 
-If you are using the Inertia stack, you should customize the SVGs located in `resources/js/Jetstream/AuthenticationCardLogo.vue`, `resources/js/Jetstream/ApplicationLogo.vue`, and `resources/js/Jetstream/ApplicationMark.vue`.
+If you are using the Inertia stack, you should customize the SVGs located in `resources/js/Components/AuthenticationCardLogo.vue`, `resources/js/Components/ApplicationLogo.vue`, and `resources/js/Components/ApplicationMark.vue`.
 
 After customizing these components, you should rebuild your assets:
 

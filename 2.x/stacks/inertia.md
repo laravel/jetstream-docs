@@ -35,7 +35,7 @@ Before using the Inertia stack, you are strongly encouraged to review the entire
 
 ## Components
 
-When we created the Jetstream Inertia stack, a variety of Vue components (buttons, panels, inputs, modals) were created to assist in creating UI consistency and ease of use. You are free to use or not use these components. All of these components are located within your application's `resources/js/Jetstream` directory.
+When we created the Jetstream Inertia stack, a variety of Vue components (buttons, panels, inputs, modals) were created to assist in creating UI consistency and ease of use. You are free to use or not use these components. All of these components are located within your application's `resources/js/Components` directory.
 
 You may gain insight into how to use these components by reviewing their usage within Jetstream's existing pages located within your application's `resources/js/Pages` directory.
 
