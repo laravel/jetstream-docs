@@ -115,11 +115,11 @@ If you are using the Livewire stack, the Livewire component that contains the ac
 Next, in your application's user interface, you should wrap the button that triggers the action within the `confirms-password` Blade component. The `confirms-password` wrapper component should contain a `wire:then` directive that specifies which Livewire action should be run once the user's password has been confirmed:
 
 ```html
-<x-jet-confirms-password wire:then="enableAdminMode">
-    <x-jet-button type="button" wire:loading.attr="disabled">
+<x-confirms-password wire:then="enableAdminMode">
+    <x-button type="button" wire:loading.attr="disabled">
         {{ __('Enable') }}
-    </x-jet-button>
-</x-jet-confirms-password>
+    </x-button>
+</x-confirms-password>
 ```
 
 #### Ensuring The Password Is Confirmed

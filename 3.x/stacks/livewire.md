@@ -36,7 +36,7 @@ In addition, Jetstream includes two types of modals: `dialog-modal` and `confirm
 To illustrate the use of modals, consider the following modal that confirms a user would like to delete their account:
 
 ```html
-<x-jet-confirmation-modal wire:model="confirmingUserDeletion">
+<x-confirmation-modal wire:model="confirmingUserDeletion">
     <x-slot name="title">
         Delete Account
     </x-slot>
@@ -46,15 +46,15 @@ To illustrate the use of modals, consider the following modal that confirms a us
     </x-slot>
 
     <x-slot name="footer">
-        <x-jet-secondary-button wire:click="$toggle('confirmingUserDeletion')" wire:loading.attr="disabled">
+        <x-secondary-button wire:click="$toggle('confirmingUserDeletion')" wire:loading.attr="disabled">
             Nevermind
-        </x-jet-secondary-button>
+        </x-secondary-button>
 
-        <x-jet-danger-button class="ml-2" wire:click="deleteUser" wire:loading.attr="disabled">
+        <x-danger-button class="ml-2" wire:click="deleteUser" wire:loading.attr="disabled">
             Delete Account
-        </x-jet-danger-button>
+        </x-danger-button>
     </x-slot>
-</x-jet-confirmation-modal>
+</x-confirmation-modal>
 ```
 
 As you can see, the modal's open / close state is determined by a `wire:model` property that is declared on the component. The property's name should correspond to a boolean property on your Livewire component's corresponding PHP class. Typically, you will set this property to `true` when the user clicks a UI element in your application that should open the modal. Of course, the property should be set to `false` when you are ready to close the modal.
