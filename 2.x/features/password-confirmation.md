@@ -152,24 +152,17 @@ Once the user has confirmed their password, they will not be required to re-ente
 If you are using the Inertia stack, you should wrap the user interface element that triggers an action requiring password confirmation with the `ConfirmsPassword` Vue component provided by Jetstream. To get started, import the `ConfirmsPassword` component into your page:
 
 ```js
-import JetConfirmsPassword from './Components/ConfirmsPassword'
-
-export default {
-    components: {
-        JetConfirmsPassword,
-        // ...
-    },
-}
+import ConfirmsPassword from './Components/ConfirmsPassword.vue'
 ```
 
 Next, wrap the component around the user interface element that triggers the action that should be confirmed. Your page should listen for the `ConfirmsPassword` component's `@confirmed` event in order to trigger the method that should be called once the user's password is confirmed:
 
 ```html
-<jet-confirms-password @confirmed="enableAdminMode">
-    <jet-button type="button" :class="{ 'opacity-25': enabling }" :disabled="enabling">
+<ConfirmsPassword @confirmed="enableAdminMode">
+    <PrimaryButton type="button" :class="{ 'opacity-25': enabling }" :disabled="enabling">
         Enable
-    </jet-button>
-</jet-confirms-password>
+    </PrimaryButton>
+</ConfirmsPassword>
 ```
 
 #### Ensuring The Password Is Confirmed
