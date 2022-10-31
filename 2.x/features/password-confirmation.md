@@ -57,10 +57,8 @@ After adding this trait to a component, you should call the `ensurePasswordIsCon
 ```php
 /**
  * Enable administration mode for user.
- *
- * @return void
  */
-public function enableAdminMode()
+public function enableAdminMode(): void
 {
     $this->ensurePasswordIsConfirmed();
 
@@ -129,10 +127,8 @@ After adding the `confirms-password` component to your application's user interf
 ```php
 /**
  * Enable administration mode for user.
- *
- * @return void
  */
-public function enableAdminMode()
+public function enableAdminMode(): void
 {
     $this->ensurePasswordIsConfirmed();
 
@@ -185,19 +181,18 @@ Once the user has confirmed their password, they will not be required to re-ente
 Sometimes, you may wish to customize how the user's password is validated during confirmation. To do so, you may use the `Fortify::confirmPasswordsUsing` method. This method accepts a closure that receives the authenticated user instance and the `password` input field of the request. The closure should return `true` if the password is valid for the given user. Typically, this method should be called from the `boot` method of your `JetstreamServiceProvider`:
 
 ```php
+use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Laravel\Fortify\Fortify;
 
 /**
  * Bootstrap any application services.
- *
- * @return void
  */
-public function boot()
+public function boot(): void
 {
     // ...
 
-    Fortify::confirmPasswordsUsing(function ($user, string $password) {
+    Fortify::confirmPasswordsUsing(function (User $user, string $password) {
         return Hash::check($password, $user->password);
     });
 }
