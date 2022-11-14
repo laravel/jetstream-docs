@@ -95,7 +95,7 @@ To illustrate the use of modals, consider the following modal that confirms a us
             Nevermind
         </SecondaryButton>
 
-        <DangerButton class="ml-2" @click.native="deleteTeam" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+        <DangerButton class="ml-2" @click.native="deleteUser" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
             Delete Account
         </DangerButton>
     </template>
