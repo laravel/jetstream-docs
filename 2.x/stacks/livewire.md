@@ -4,7 +4,7 @@
 
 ## Introduction
 
-Laravel Livewire is a library that makes it simple to build modern, reactive, dynamic interfaces using Laravel Blade as your templating language. This is a great stack to choose if you want to build an application that is dynamic and reactive but don't feel comfortable jumping into a full JavaScript framework like Vue.js.
+Laravel Livewire is a library that makes it simple to build modern, reactive, dynamic interfaces using Laravel Blade as your templating language. This is a great stack to choose if you want to build an application that is dynamic and reactive, and is a great alternative approach to a full JavaScript framework like Vue.js.
 
 When using Livewire, your application's routes will respond with typical Blade templates. However, within these templates you may render Livewire components as necessary:
 
