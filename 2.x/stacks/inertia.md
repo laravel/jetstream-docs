@@ -11,14 +11,12 @@ In other words, this stack gives you the full power of Vue.js without the comple
 ```php
 use Illuminate\Http\Request;
 use Inertia\Inertia;
+use Inertia\Response;
 
 /**
  * Show the general profile settings screen.
- *
- * @param  \Illuminate\Http\Request  $request
- * @return \Inertia\Response
  */
-public function show(Request $request)
+public function show(Request $request): Response
 {
     return Inertia::render('Profile/Show', [
         'sessions' => $this->sessions($request)->all(),
@@ -51,10 +49,8 @@ use Laravel\Jetstream\Jetstream;
 
 /**
  * Bootstrap any application services.
- *
- * @return void
  */
-public function boot()
+public function boot(): void
 {
     // ...
 

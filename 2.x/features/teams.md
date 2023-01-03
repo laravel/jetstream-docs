@@ -197,12 +197,8 @@ When building a Jetstream application that provides both API support and team su
 ```php
 /**
  * Determine whether the user can view a flight.
- *
- * @param  \App\Models\User  $user
- * @param  \App\Models\Flight  $flight
- * @return bool
  */
-public function view(User $user, Flight $flight)
+public function view(User $user, Flight $flight): bool
 {
     return $user->belongsToTeam($flight->team) &&
            $user->hasTeamPermission($flight->team, 'flight:view') &&

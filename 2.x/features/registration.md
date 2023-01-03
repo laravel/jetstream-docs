@@ -57,10 +57,8 @@ use Laravel\Fortify\Fortify;
 
 /**
  * Bootstrap any application services.
- *
- * @return void
  */
-public function boot()
+public function boot(): void
 {
     Fortify::registerView(function () {
         return view('auth.register');
