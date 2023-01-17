@@ -13,8 +13,6 @@ composer require laravel/jetstream
 After installing the Jetstream package, you may execute the `jetstream:install` Artisan command. 
 This command accepts the name of the stack you prefer (`livewire` or `inertia`). In addition, you may use the `--teams` switch to enable team support. 
 
-If you would like to include "dark mode" support when scaffolding your application's frontend, simply provide the `--dark` directive when executing the `jetstream:install` command.
-
 The `jetstream:install` command will also install a suite of "feature" tests that provide test coverage for the features provided by Jetstream. 
 If you would like to use [Pest PHP](https://pestphp.com) for testing, you may use the `--pest` switch to install a Pest test suite instead of the default PHPUnit test suite.
 
@@ -48,6 +46,14 @@ php artisan jetstream:install inertia --ssr
 ```
 
 You can read more about running the SSR server in the [Laravel Vite plugin](https://laravel.com/docs/vite#ssr) and [Inertia](https://inertiajs.com/server-side-rendering) documentation.
+
+#### Dark Mode
+
+If you would like to include "dark mode" support when scaffolding your application's frontend, simply provide the `--dark` directive when executing the `jetstream:install` command:
+
+```bash
+php artisan jetstream:install livewire --dark
+```
 
 ### Finalizing The Installation
 
