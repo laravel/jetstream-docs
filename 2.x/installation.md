@@ -47,14 +47,6 @@ php artisan jetstream:install inertia --ssr
 
 You can read more about running the SSR server in the [Laravel Vite plugin](https://laravel.com/docs/vite#ssr) and [Inertia](https://inertiajs.com/server-side-rendering) documentation.
 
-#### Dark Mode
-
-If you would like to include "dark mode" support when scaffolding your application's frontend, provide the `--dark` directive when executing the `jetstream:install` command:
-
-```bash
-php artisan jetstream:install livewire --dark
-```
-
 ### Finalizing The Installation
 
 After installing Jetstream, you should install and build your NPM dependencies and migrate your database:
