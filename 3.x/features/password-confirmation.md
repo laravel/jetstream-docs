@@ -57,10 +57,8 @@ After adding this trait to a component, you should call the `ensurePasswordIsCon
 ```php
 /**
  * Enable administration mode for user.
- *
- * @return void
  */
-public function enableAdminMode()
+public function enableAdminMode(): void
 {
     $this->ensurePasswordIsConfirmed();
 
@@ -129,10 +127,8 @@ After adding the `confirms-password` component to your application's user interf
 ```php
 /**
  * Enable administration mode for user.
- *
- * @return void
  */
-public function enableAdminMode()
+public function enableAdminMode(): void
 {
     $this->ensurePasswordIsConfirmed();
 
@@ -152,24 +148,17 @@ Once the user has confirmed their password, they will not be required to re-ente
 If you are using the Inertia stack, you should wrap the user interface element that triggers an action requiring password confirmation with the `ConfirmsPassword` Vue component provided by Jetstream. To get started, import the `ConfirmsPassword` component into your page:
 
 ```js
-import JetConfirmsPassword from './Components/ConfirmsPassword'
-
-export default {
-    components: {
-        JetConfirmsPassword,
-        // ...
-    },
-}
+import ConfirmsPassword from './Components/ConfirmsPassword.vue'
 ```
 
 Next, wrap the component around the user interface element that triggers the action that should be confirmed. Your page should listen for the `ConfirmsPassword` component's `@confirmed` event in order to trigger the method that should be called once the user's password is confirmed:
 
 ```html
-<jet-confirms-password @confirmed="enableAdminMode">
-    <jet-button type="button" :class="{ 'opacity-25': enabling }" :disabled="enabling">
+<ConfirmsPassword @confirmed="enableAdminMode">
+    <PrimaryButton type="button" :class="{ 'opacity-25': enabling }" :disabled="enabling">
         Enable
-    </jet-button>
-</jet-confirms-password>
+    </PrimaryButton>
+</ConfirmsPassword>
 ```
 
 #### Ensuring The Password Is Confirmed
@@ -192,19 +181,18 @@ Once the user has confirmed their password, they will not be required to re-ente
 Sometimes, you may wish to customize how the user's password is validated during confirmation. To do so, you may use the `Fortify::confirmPasswordsUsing` method. This method accepts a closure that receives the authenticated user instance and the `password` input field of the request. The closure should return `true` if the password is valid for the given user. Typically, this method should be called from the `boot` method of your `JetstreamServiceProvider`:
 
 ```php
+use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Laravel\Fortify\Fortify;
 
 /**
  * Bootstrap any application services.
- *
- * @return void
  */
-public function boot()
+public function boot(): void
 {
     // ...
 
-    Fortify::confirmPasswordsUsing(function ($user, string $password) {
+    Fortify::confirmPasswordsUsing(function (User $user, string $password) {
         return Hash::check($password, $user->password);
     });
 }

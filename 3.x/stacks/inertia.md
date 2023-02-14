@@ -11,14 +11,12 @@ In other words, this stack gives you the full power of Vue.js without the comple
 ```php
 use Illuminate\Http\Request;
 use Inertia\Inertia;
+use Inertia\Response;
 
 /**
  * Show the general profile settings screen.
- *
- * @param  \Illuminate\Http\Request  $request
- * @return \Inertia\Response
  */
-public function show(Request $request)
+public function show(Request $request): Response
 {
     return Inertia::render('Profile/Show', [
         'sessions' => $this->sessions($request)->all(),
@@ -51,10 +49,8 @@ use Laravel\Jetstream\Jetstream;
 
 /**
  * Bootstrap any application services.
- *
- * @return void
  */
-public function boot()
+public function boot(): void
 {
     // ...
 
@@ -81,7 +77,7 @@ Jetstream's Inertia stack also includes two modal components: `DialogModal` and 
 To illustrate the use of modals, consider the following modal that confirms a user would like to delete their account:
 
 ```html
-<jet-confirmation-modal :show="confirmingUserDeletion" @close="confirmingUserDeletion = false">
+<ConfirmationModal :show="confirmingUserDeletion" @close="confirmingUserDeletion = false">
     <template #title>
         Delete Account
     </template>
@@ -91,15 +87,15 @@ To illustrate the use of modals, consider the following modal that confirms a us
     </template>
 
     <template #footer>
-        <jet-secondary-button @click.native="confirmingUserDeletion = false">
+        <SecondaryButton @click.native="confirmingUserDeletion = false">
             Nevermind
-        </jet-secondary-button>
+        </SecondaryButton>
 
-        <jet-danger-button class="ml-2" @click.native="deleteTeam" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+        <DangerButton class="ml-2" @click.native="deleteUser" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
             Delete Account
-        </jet-danger-button>
+        </DangerButton>
     </template>
-</jet-confirmation-modal>
+</ConfirmationModal>
 ```
 
 As you can see, the modal's open / close state is determined by a `show` property that is declared on the component. The modal's contents may be specified by hydrating three slots: `title`, `content`, and `footer`.
@@ -109,7 +105,7 @@ As you can see, the modal's open / close state is determined by a `show` propert
 Jetstream's Inertia stack includes Tighten's Ziggy library as a JavaScript alternative to the Laravel `route()` helper. You can refer to the [Ziggy usage documentation](https://github.com/tighten/ziggy#usage) for a complete guide on using this library, but some common examples can be found in Jetstream's own Vue files, including `Layouts/AppLayout.vue`:
 
 ```html
-<jet-nav-link :href="route('dashboard')" :active="route().current('dashboard')">
+<NavLink :href="route('dashboard')" :active="route().current('dashboard')">
     Dashboard
-</jet-nav-link>
+</NavLink>
 ```
