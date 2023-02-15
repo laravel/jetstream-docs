@@ -3,7 +3,7 @@ module.exports = {
 
     plugins: [
         ['@vuepress/search', {
-            test: ['/2\.x/'],
+            test: ['/3\.x/'],
         }]
     ],
 }
