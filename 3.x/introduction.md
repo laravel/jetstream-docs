@@ -8,7 +8,7 @@ Laravel Jetstream is a beautifully designed application starter kit for Laravel 
 
 Jetstream is designed using [Tailwind CSS](https://tailwindcss.com) and offers your choice of [Livewire](./stacks/livewire.md) or [Inertia](./stacks/inertia.md) scaffolding.
 
-![Screenshot of Laravel Jetstream](./../assets/img/preview-2.png)
+![Screenshot of Laravel Jetstream](./../assets/img/preview-3.png)
 
 ## Available Stacks
 
