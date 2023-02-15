@@ -71,13 +71,7 @@ After installing Jetstream, you may have noticed that the Jetstream logo is util
 
 ### Livewire
 
-If you are using the Livewire stack, you should first publish the Livewire stack's Blade components:
-
-```bash
-php artisan vendor:publish --tag=jetstream-views
-```
-
-Next, you should customize the SVGs located in the `resources/views/vendor/jetstream/components/application-logo.blade.php`, `resources/views/vendor/jetstream/components/authentication-card-logo.blade.php`, and `resources/views/vendor/jetstream/components/application-mark.blade.php` components.
+If you are using the Livewire stack, you should customize the SVGs located in `resources/views/components/application-logo.blade.php`, `resources/views/components/authentication-card-logo.blade.php`, and `resources/views/components/application-mark.blade.php`.
 
 ### Inertia
 

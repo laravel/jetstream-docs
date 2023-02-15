@@ -46,16 +46,6 @@ In addition to the application layout, Jetstream creates a "guest" layout that i
 
 The "main" view of your application is published at `resources/views/dashboard.blade.php` when using Livewire and `resources/js/Pages/Dashboard.vue` when using Inertia. You are free to use this as a starting point for building the primary "dashboard" of your application.
 
-### Livewire Components
-
-When using the Livewire stack, Jetstream utilizes a variety of generic Blade components such as buttons and modals. If you are using the Livewire stack and you would like to publish these components after installing Jetstream, you may use the `vendor:publish` Artisan command:
-
-```bash
-php artisan vendor:publish --tag=jetstream-views
-```
-
-Once these components have been published, you are free to modify them as necessary to adjust the look and feel of your application.
-
 ## Tailwind
 
 During installation, Jetstream will scaffold your application's integration with the Tailwind CSS framework. Specifically, a `postcss.config.js` file and `tailwind.config.js` file will be created. These two files are used to build your application's compiled CSS output. You are free to modify these files as needed for your application.
