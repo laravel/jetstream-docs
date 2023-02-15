@@ -71,11 +71,19 @@ After installing Jetstream, you may have noticed that the Jetstream logo is util
 
 ### Livewire
 
-If you are using the Livewire stack, you should customize the SVGs located in `resources/views/components/application-logo.blade.php`, `resources/views/components/authentication-card-logo.blade.php`, and `resources/views/components/application-mark.blade.php`.
+If you are using the Livewire stack, you should customize the SVGs located in the following Blade components:
+
+* `resources/views/components/application-logo.blade.php`
+* `resources/views/components/application-mark.blade.php`
+* `resources/views/components/authentication-card-logo.blade.php`
 
 ### Inertia
 
-If you are using the Inertia stack, you should customize the SVGs located in `resources/js/Components/AuthenticationCardLogo.vue`, `resources/js/Components/ApplicationLogo.vue`, and `resources/js/Components/ApplicationMark.vue`.
+If you are using the Inertia stack, you should customize the SVGs located in the following Vue components:
+
+* `resources/js/Components/ApplicationLogo.vue`
+* `resources/js/Components/ApplicationMark.vue`
+* `resources/js/Components/AuthenticationCardLogo.vue`
 
 After customizing these components, you should rebuild your assets:
 
