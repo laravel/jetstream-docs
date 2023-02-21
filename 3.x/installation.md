@@ -90,3 +90,7 @@ After customizing these components, you should rebuild your assets:
 ```bash
 npm run build
 ```
+
+## Upgrade Guide
+
+To upgrade to Jetstream 3.x from a previous release, please consult our [upgrade guide](https://github.com/laravel/jetstream/blob/3.x/UPGRADE.md).
