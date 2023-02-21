@@ -21,6 +21,7 @@ module.exports = {
 
         nav: [
             { text: 'Home', link: '/', target: '_self' },
+            { text: 'Upgrade', link: 'https://github.com/laravel/jetstream/blob/3.x/UPGRADE.md', target: '_self' },
         ],
 
         sidebar: {
