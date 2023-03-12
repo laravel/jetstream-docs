@@ -119,12 +119,15 @@ use Laravel\Fortify\Features;
 ],
 ```
 
-Next, you should ensure that your `App\Models\User` class implements the `Illuminate\Contracts\Auth\MustVerifyEmail` interface. This interface is already imported into this model for you.
+Next, you should ensure that your `App\Models\User` class implements the `Illuminate\Contracts\Auth\MustVerifyEmail` interface. This interface is already imported into this model for you:
 
 ```php
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 
 class User extends Authenticatable implements MustVerifyEmail
+{
+    // ...
+}
 ```
 
 Once these two setup steps have been completed, newly registered users will receive an email prompting them to verify their email address ownership.
