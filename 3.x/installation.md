@@ -7,6 +7,8 @@
 You may use Composer to install Jetstream into your new Laravel project:
 
 ```bash
+composer create-project laravel/laravel example-app
+
 composer require laravel/jetstream
 ```
 
