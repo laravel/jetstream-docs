@@ -8,7 +8,7 @@ Laravel Jetstream's architecture is a little different than other Laravel applic
 
 ## Laravel Fortify
 
-Under the hood, the authentication portions of Jetstream are powered by [Laravel Fortify](https://github.com/laravel/fortify), which is a front-end agnostic, "headless" authentication backend for Laravel.
+Under the hood, the authentication portions of Jetstream are powered by [Laravel Fortify](https://github.com/laravel/fortify), which is a frontend agnostic, "headless" authentication backend for Laravel.
 
 Fortify registers the routes and controllers needed to implement all of Laravel's authentication features, including login, registration, password reset, email verification, and more. After installing Fortify, you may run the `route:list` Artisan command to see the routes that Fortify has registered.
 
