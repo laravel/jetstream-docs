@@ -89,7 +89,7 @@ Many application require users to accept their terms of service / privacy policy
 To get started, enable this feature in your application's `config/jetstream.php` configuration file:
 
 ```php
-use Laravel\Fortify\Features;
+use Laravel\Jetstream\Features;
 
 'features' => [
     Features::termsAndPrivacyPolicy(),
