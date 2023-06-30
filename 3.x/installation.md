@@ -65,7 +65,7 @@ After installing Jetstream, you should install and build your NPM dependencies a
 
 ```bash
 npm install
-npm run build
+npm run prod
 php artisan migrate
 ```
 
