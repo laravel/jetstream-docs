@@ -100,6 +100,8 @@ use Laravel\Jetstream\Features;
 
 Next, you may write your terms of service / privacy policy documents by modifying your application's `resources/markdown/terms.md` and `resources/markdown/policy.md` files.
 
+To leverage Laravel's user-friendly localization feature, simply suffix your files with the desired locale and let Laravel Jetstream handle the rendering seamlessly. For instance, if you want to provide the documents in Spanish, name the file as terms.es.md.
+
 During registration, Jetstream will automatically ask the user to approve these documents. When the user clicks on the link to view the documents, Jetstream will use [Tailwind's typography plug-in](https://tailwindcss.com/docs/typography-plugin) to render the Markdown into beautifully formatted prose.
 
 ## Email Verification
