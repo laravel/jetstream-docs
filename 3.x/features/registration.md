@@ -102,6 +102,10 @@ Next, you may write your terms of service / privacy policy documents by modifyin
 
 During registration, Jetstream will automatically ask the user to approve these documents. When the user clicks on the link to view the documents, Jetstream will use [Tailwind's typography plug-in](https://tailwindcss.com/docs/typography-plugin) to render the Markdown into beautifully formatted prose.
 
+#### Terms & Policy Localization
+
+To serve localized versions of your terms of service and privacy policy, you may suffix the files with the desired locale, such as `terms.es.md`. Jetstream will automatically serve the correct version of the file based on the current locale that is configured for the application.
+
 ## Email Verification
 
 Laravel Jetstream includes support for requiring that a newly registered user verify their email address. However, support for this feature is disabled by default. To enable this feature, you should uncomment the relevant entry in the `features` configuration item of your application's `config/fortify.php` configuration file:
