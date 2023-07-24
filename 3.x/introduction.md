@@ -12,11 +12,11 @@ Jetstream is designed using [Tailwind CSS](https://tailwindcss.com) and offers y
 
 ## Available Stacks
 
-Laravel Jetstream offers your choice of two frontend stacks: [Livewire](https://laravel-livewire.com) and [Inertia.js](https://inertiajs.com). Each stack provides a productive, powerful starting point for building your application; however, the stack you choose will depend on your preferred templating language.
+Laravel Jetstream offers your choice of two frontend stacks: [Livewire](https://livewire.laravel.com) and [Inertia.js](https://inertiajs.com). Each stack provides a productive, powerful starting point for building your application; however, the stack you choose will depend on your preferred templating language.
 
 ### Livewire + Blade
 
-[Laravel Livewire](https://laravel-livewire.com) is a library that makes it simple to build modern, reactive, dynamic interfaces using Laravel Blade as your templating language. This is a great stack to choose if you want to build an application that is dynamic and reactive, and is a great alternative to a full JavaScript framework like Vue.js.
+[Laravel Livewire](https://livewire.laravel.com) is a library that makes it simple to build modern, reactive, dynamic interfaces using Laravel Blade as your templating language. This is a great stack to choose if you want to build an application that is dynamic and reactive, and is a great alternative to a full JavaScript framework like Vue.js.
 
 When using Livewire, you may pick and choose which portions of your application will be a Livewire component, while the remainder of your application can be rendered as the traditional Blade templates you are used to.
 
