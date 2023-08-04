@@ -94,6 +94,7 @@ export default defineConfigWithTheme<ThemeConfig>({
                     { text: 'Password Confirmation', link: '/features/password-confirmation' },
                     { text: 'Two Factor Authentication', link: '/features/two-factor-authentication' },
                     { text: 'Browser Sessions', link: '/features/browser-sessions' },
+                    { text: 'Teams', link: '/features/teams' },
                 ],
             }, {
                 text: 'Stack Features',
