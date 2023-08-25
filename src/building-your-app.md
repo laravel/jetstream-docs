@@ -10,7 +10,7 @@ After installing Jetstream, the code is yours. The templates belong to your appl
 
 :::tip Livewire & Inertia
 
-Before diving into Jetstream, you should be familiar with how to use [Laravel Livewire](https://laravel-livewire.com) or [Inertia](https://inertiajs.com). Jetstream relies heavily on these technologies to provide a first-class user and developer experience.
+Before diving into Jetstream, you should be familiar with how to use [Laravel Livewire](https://livewire.laravel.com) or [Inertia](https://inertiajs.com). Jetstream relies heavily on these technologies to provide a first-class user and developer experience.
 :::
 
 ## Application Dashboard
