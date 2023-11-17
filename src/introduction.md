@@ -22,7 +22,7 @@ When using Livewire, you may pick and choose which portions of your application 
 
 :::tip Livewire Screencasts
 
-If you're new to Livewire, check out the [screencasts available on the Livewire website](https://laravel-livewire.com/screencasts/installation).
+If you're new to Livewire, check out the [screencasts available on the Livewire website](https://livewire.laravel.com/screencasts/installation).
 :::
 
 ### Inertia + Vue
