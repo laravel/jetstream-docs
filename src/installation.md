@@ -14,18 +14,27 @@ cd example-app
 composer require laravel/jetstream
 ```
 
-After installing the Jetstream package, you may execute the `jetstream:install` Artisan command. 
-This command accepts the name of the stack you prefer (`livewire` or `inertia`). In addition, you may use the `--teams` switch to enable team support. 
+:::danger New Applications Only
+
+Jetstream should only be installed into new Laravel applications. Attempting to install Jetstream into an existing Laravel application will result in unexpected behavior and issues.
+:::
+
+After installing the Jetstream package, you may execute the `php artisan jetstream:install`.
+
+
+This command provides an interactive bash interface, enabling you to select the stack you wish to install. You have the option to choose either `Vue with Inertia` or `Laravel Livewire`. Upon selecting your preferred stack, the interface will present a range of available features for selection, including API support, Dark mode, Email Verification, Inertia SSR, or Team support. You can choose these options by pressing the space bar. Following this, you will be prompted to choose a testing framework, either `Pest` or `PHPUnit`.
+
+
+Alternatively, you can bypass the interactive bash steps by manually appending the name of the desired stack or feature directly to the `jetstream:install` Artisan command, as detailed below. This approach eliminates the need for the interactive steps.
+
+
+The `jetstream:install` Artisan command accepts the name of the stack you prefer (`livewire` or `inertia`). In addition, you may use the `--teams` switch to enable team support. 
 
 The `jetstream:install` command will also install a suite of "feature" tests that provide test coverage for the features provided by Jetstream. 
 If you would like to use [Pest PHP](https://pestphp.com) for testing, you may use the `--pest` switch to install a Pest test suite instead of the default PHPUnit test suite.
 
 **You are highly encouraged to read through the entire documentation of [Livewire](https://livewire.laravel.com) or [Inertia](https://inertiajs.com) before beginning your Jetstream project.**
 
-:::danger New Applications Only
-
-Jetstream should only be installed into new Laravel applications. Attempting to install Jetstream into an existing Laravel application will result in unexpected behavior and issues.
-:::
 
 #### Install Jetstream With Livewire
 
