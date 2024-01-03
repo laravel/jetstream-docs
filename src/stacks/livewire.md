@@ -19,6 +19,8 @@ When using the Livewire stack, Jetstream has some unique features that you shoul
 :::tip Livewire Documentation
 
 Before using the Livewire stack, you are strongly encouraged to review the entire [Livewire documentation](https://livewire.laravel.com)
+
+Note that when using/upgrading to JetStream v4, you should also be using Livewire v3
 :::
 
 ## Components
