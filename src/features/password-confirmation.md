@@ -28,7 +28,7 @@ This form of password confirmation redirects the user to a dedicated password co
 
 ![Screenshot of Password Confirmation](/img/redirect-confirm.png)
 
-### Redirect Password Confirmation Via Livewire
+### Redirect Password Confirmation via Livewire
 
 #### Protecting Routes
 
@@ -48,7 +48,7 @@ Route::post('/billing', function () {
 
 That view that renders the Livewire stack's password confirmation screen is located at `resources/views/auth/confirm-password.blade.php`. Generally, this view should not need customization; however, you are free to make general presentational tweaks to this page based on your own application's design.
 
-#### Ensuring The Password Has Been Confirmed
+#### Ensuring Password Confirmation
 
 Next, Livewire components that contain an action that should require password confirmation before being invoked should use the `Laravel\Jetstream\ConfirmsPasswords` trait.
 
@@ -71,7 +71,7 @@ public function enableAdminMode(): void
 Once the user has confirmed their password, they will not be required to re-enter their password until the number of seconds defined by your application's `auth.password_timeout` configuration option has elapsed:
 :::
 
-### Redirect Password Confirmation Via Inertia
+### Redirect Password Confirmation via Inertia
 
 To implement password confirmation via redirect to a password confirmation screen, you should ensure that the route that will render the view that requires password confirmation and any routes that perform the confirmed actions are assigned the `password.confirm` middleware.
 
@@ -102,7 +102,7 @@ This form of password confirmation displays a modal window that allows the user 
 
 ![Screenshot of Password Confirmation](/img/modal-confirm.png)
 
-### Modal Password Confirmation Via Livewire
+### Modal Password Confirmation via Livewire
 
 #### Component Preparation
 
@@ -120,7 +120,7 @@ Next, in your application's user interface, you should wrap the button that trig
 </x-confirms-password>
 ```
 
-#### Ensuring The Password Is Confirmed
+#### Ensuring Password Confirmation via Livewire
 
 After adding the `confirms-password` component to your application's user interface, you should call the `ensurePasswordIsConfirmed` method within the Livewire action that requires password confirmation. This should be done at the very beginning of the relevant action method:
 
@@ -141,7 +141,7 @@ public function enableAdminMode(): void
 Once the user has confirmed their password, they will not be required to re-enter their password until the number of seconds defined by your application's `auth.password_timeout` configuration option has elapsed:
 :::
 
-### Modal Password Confirmation Via Inertia
+### Modal Password Confirmation via Inertia
 
 #### The `ConfirmsPassword` Vue Component
 
@@ -161,7 +161,7 @@ Next, wrap the component around the user interface element that triggers the act
 </ConfirmsPassword>
 ```
 
-#### Ensuring The Password Is Confirmed
+#### Ensuring Password Confirmation via Inertia
 
 After adding the `ConfirmsPassword` component to your user interface, you should ensure that the route that performs the confirmed action is assigned the `password.confirm` middleware. This middleware is included with the default installation of Laravel:
 

@@ -46,7 +46,7 @@ Of course, these methods may be chained to define the password validation rules 
 
 When using the Livewire stack, the registration view is displayed using the `resources/views/auth/register.blade.php` Blade template. When using the Inertia stack, this view is displayed using the `resources/js/Pages/Auth/Register.vue` template. Any additional fields you add to these pages will be available via the `$input` array passed to the `App\Actions\Fortify\CreateNewUser` action.
 
-### Customizing The Registration View
+### Customizing the Registration View
 
 Laravel Jetstream will automatically render the proper views for your application's registration screen. However, sometimes you may wish to customize how the view / page is rendered.
 
@@ -80,7 +80,7 @@ Fortify::registerView(function () {
 });
 ```
 
-## Requiring Terms Of Service / Privacy Policy Approval
+## Requiring Terms of Service / Privacy Policy Approval
 
 Many applications require users to accept their terms of service / privacy policy during registration. Jetstream allows you to easily enable this requirement for your own application, as well as provides a convenient way of writing these documents using Markdown.
 

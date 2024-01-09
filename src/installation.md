@@ -59,7 +59,7 @@ If you would like to include "dark mode" support when scaffolding your applicati
 php artisan jetstream:install livewire --dark
 ```
 
-### Finalizing The Installation
+### Finalizing the Installation
 
 After installing Jetstream, you should install and build your NPM dependencies and migrate your database:
 

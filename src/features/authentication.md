@@ -20,7 +20,7 @@ Within the `fortify` configuration file, you can also disable entire features of
 
 When using the Livewire stack, the login view is displayed using the `resources/views/auth/login.blade.php` Blade template. When using the Inertia stack, this view is displayed using the `resources/js/Pages/Auth/Login.vue` template. The directories that contain these views also contain other authentication-related views / pages for your application.
 
-### Customizing The Authentication Views
+### Customizing the Authentication Views
 
 Laravel Jetstream will automatically render the proper views for your application's login and other authentication screens. However, sometimes you may wish to customize how a particular authentication view is rendered or the data that is received by the view.
 
@@ -57,7 +57,7 @@ Fortify::loginView(function () {
 });
 ```
 
-## Customizing The Authentication Process
+## Customizing the Authentication Process
 
 ### Customizing User Authentication
 
@@ -98,7 +98,7 @@ use Laravel\Fortify\Fortify;
 Fortify::authenticateUsing([new AuthenticateLoginAttempt, '__invoke']);
 ```
 
-### Customizing The Authentication Pipeline
+### Customizing the Authentication Pipeline
 
 Laravel Fortify, which is Jetstream's underlying authentication library, authenticates login requests through a pipeline of invokable classes.
 
