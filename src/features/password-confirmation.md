@@ -91,7 +91,7 @@ That page that renders the Inertia's stack's password confirmation screen is loc
 
 :::warning Password Confirmation Expiration
 
-Once the user has confirmed their password, they will not be required to re-enter their password until the number of seconds defined by your application's `auth.password_timeout` configuration option has elapsed:
+Once the user has confirmed their password, they will not be required to re-enter their password until the number of seconds defined by your application's `auth.password_timeout` configuration option has elapsed.
 :::
 
 ## Modal Password Confirmation
