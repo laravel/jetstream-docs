@@ -46,7 +46,7 @@ Route::post('/billing', function () {
 })->middleware(['password.confirm']);
 ```
 
-That view that renders the Livewire stack's password confirmation screen is located at `resources/views/auth/confirm-password.blade.php`. Generally, this view should not need customization; however, you are free to make general presentational tweaks to this page based on your own application's design.
+The view that renders the Livewire stack's password confirmation screen is located at `resources/views/auth/confirm-password.blade.php`. Generally, this view should not need customization; however, you are free to make general presentational tweaks to this page based on your own application's design.
 
 #### Ensuring Password Confirmation
 
