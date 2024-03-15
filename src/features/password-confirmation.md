@@ -87,7 +87,7 @@ Route::post('/billing', function () {
 })->middleware(['password.confirm']);
 ```
 
-That page that renders the Inertia's stack's password confirmation screen is located at `resources/js/Pages/Auth/ConfirmPassword.vue`. Generally, this page should not need customization; however, you are free to make general presentational tweaks to this page based on your own application's design.
+The page that renders the Inertia's stack's password confirmation screen is located at `resources/js/Pages/Auth/ConfirmPassword.vue`. Generally, this page should not need customization; however, you are free to make general presentational tweaks to this page based on your own application's design.
 
 :::warning Password Confirmation Expiration
 
@@ -138,7 +138,7 @@ public function enableAdminMode(): void
 
 :::warning Password Confirmation Expiration
 
-Once the user has confirmed their password, they will not be required to re-enter their password until the number of seconds defined by your application's `auth.password_timeout` configuration option has elapsed:
+Once the user has confirmed their password, they will not be required to re-enter their password until the number of seconds defined by your application's `auth.password_timeout` configuration option has elapsed.
 :::
 
 ### Modal Password Confirmation via Inertia
