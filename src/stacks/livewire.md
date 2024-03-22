@@ -89,6 +89,3 @@ $this->banner('Invoice paid.');
 
 $this->dangerBanner('Payment failed.');
 ```
-
-
-
