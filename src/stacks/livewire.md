@@ -63,39 +63,31 @@ The modal's contents may be specified by hydrating three Blade component slots: 
 
 ## Banner Alerts
 
-Jetstream includes an `InteractsWithBanner` trait that is designed to simplify the process of displaying banner messages to the user using Livewire.
+Jetstream's Livewire stack includes an `InteractsWithBanner` trait that is designed to simplify the process of displaying banner messages to the user.
 
-It provides methods to quickly display a `success` or `danger` message with the help of the `resources/views/components/banner.blade.php` component and [Livewire's event system](https://livewire.laravel.com/docs/events).
+The `InteractsWithBanner` trait provides methods to quickly display a `success` or `danger` message with the help of the `resources/views/components/banner.blade.php` component and [Livewire's event system](https://livewire.laravel.com/docs/events).
 
 ### Usage
 
-To use the `InteractsWithBanner` trait, include it within your Livewire component class:
+First, include the `InteractsWithBanner` trait within one of your Livewire components:
 
 ```php
 use Laravel\Jetstream\InteractsWithBanner;
 
-class YourLivewireComponent extends Component
+class ExampleComponent extends Component
 {
     use InteractsWithBanner;
     
-    // Your component's methods
+    // ...
 }
 ```
 
-To display a message to the user, utilize the banner method provided by this trait:
+To display a message to the user, invoke the `banner` or `dangerBanner` methods within a Livewire component method:
 
 ```php
-// success message
-$this->banner('Your message here.');
+$this->banner('Invoice paid.');
 
-// danger message
-$this->dangerBanner('Your message here.');
-```
-
-Internally these methods dispatch the `banner-message` Livewire event. This event carries two parameters: `style` and `message`, which instruct the banner component on how to display the message.
-
-```php
-$this->dispatch('banner-message', style: 'success', message: 'Your message here.');
+$this->dangerBanner('Payment failed.');
 ```
 
 
