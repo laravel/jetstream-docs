@@ -60,3 +60,32 @@ To illustrate the use of modals, consider the following modal that confirms a us
 As you can see, the modal's open / close state is determined by a `wire:model` property that is declared on the component. The property's name should correspond to a boolean property on your Livewire component's corresponding PHP class. Typically, you will set this property to `true` when the user clicks a UI element in your application that should open the modal. Of course, the property should be set to `false` when you are ready to close the modal.
 
 The modal's contents may be specified by hydrating three Blade component slots: `title`, `content`, and `footer`.
+
+## Banner Alerts
+
+Jetstream's Livewire stack includes an `InteractsWithBanner` trait that is designed to simplify the process of displaying banner messages to the user.
+
+The `InteractsWithBanner` trait provides methods to quickly display a `success` or `danger` message with the help of the `resources/views/components/banner.blade.php` component and [Livewire's event system](https://livewire.laravel.com/docs/events).
+
+### Usage
+
+First, include the `InteractsWithBanner` trait within one of your Livewire components:
+
+```php
+use Laravel\Jetstream\InteractsWithBanner;
+
+class ExampleComponent extends Component
+{
+    use InteractsWithBanner;
+    
+    // ...
+}
+```
+
+To display a message to the user, invoke the `banner` or `dangerBanner` methods within a Livewire component method:
+
+```php
+$this->banner('Invoice paid.');
+
+$this->dangerBanner('Payment failed.');
+```
