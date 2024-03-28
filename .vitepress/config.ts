@@ -71,7 +71,7 @@ export default defineConfigWithTheme<ThemeConfig>({
                 link: 'https://jetstream.laravel.com',
                 current: true,
             },
-            { text: 'v4.x', link: 'https://github.com/laravel/jetstream-docs/tree/4.x' },
+            { text: 'v4.x', link: 'https://github.com/laravel/jetstream-docs/tree/61cfcca' },
             { text: 'v3.x', link: 'https://github.com/laravel/jetstream-docs/tree/3.x' },
             { text: 'v2.x', link: 'https://github.com/laravel/jetstream-docs/tree/2.x' },
             { text: 'v1.x', link: 'https://github.com/laravel/jetstream-docs/tree/1.x' },
