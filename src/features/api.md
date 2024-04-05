@@ -27,6 +27,12 @@ If your application will be offering an API that may be consumed by third-partie
 ],
 ```
 
+If you did not initially install Jetstream with the `--api` option, you may also need to run the `install:api` Artisan command in order to create the `routes/api.php` file and install Laravel Sanctum:
+
+```shell
+php artisan install:api
+```
+
 ## Defining Permissions
 
 The permissions available to API tokens are defined using the `Jetstream::permissions` method within your application's `App\Providers\JetstreamServiceProvider` class. Permissions are defined as simple strings. Once they have been defined they may be assigned to an API token:
