@@ -27,7 +27,7 @@ If your application will be offering an API that may be consumed by third-partie
 ],
 ```
 
-If you did not initially install Jetstream with the `--api` option, you may also need to run the `install:api` Artisan command in order to create the `routes/api.php` file and install Laravel Sanctum:
+If you did not initially install Jetstream with the `--api` option, you may also need to execute the `install:api` Artisan command in order to create the `routes/api.php` file and install Laravel Sanctum:
 
 ```shell
 php artisan install:api
