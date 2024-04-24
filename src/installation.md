@@ -30,7 +30,11 @@ Jetstream should only be installed into new Laravel applications. Attempting to 
 
 ```bash
 php artisan jetstream:install livewire
+```
 
+If you would like "teams" support, you can provide the `--teams` directive to the install command:
+
+```bash
 php artisan jetstream:install livewire --teams
 ```
 
@@ -38,7 +42,11 @@ php artisan jetstream:install livewire --teams
 
 ```bash
 php artisan jetstream:install inertia
+```
 
+If you would like "teams" support with the Inertia stack, provide the `--teams` directive to the install command:
+
+```bash
 php artisan jetstream:install inertia --teams
 ```
 
