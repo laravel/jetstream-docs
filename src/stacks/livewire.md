@@ -82,10 +82,12 @@ class ExampleComponent extends Component
 }
 ```
 
-To display a message to the user, invoke the `banner` or `dangerBanner` methods within a Livewire component method:
+To display a message to the user, invoke the `banner`, `warningBanner` or `dangerBanner` methods within a Livewire component method:
 
 ```php
 $this->banner('Invoice paid.');
+
+$this->warningBanner('Payment pending approval.');
 
 $this->dangerBanner('Payment failed.');
 ```

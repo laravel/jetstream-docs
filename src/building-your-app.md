@@ -62,10 +62,12 @@ $request->session()->flash('flash.bannerStyle', 'success');
 return redirect('/');
 ```
 
-You may also instruct Jetstream to display the banner by invoking the `banner` or `dangerBanner` methods on a redirect response instance:
+You may also instruct Jetstream to display the banner by invoking the `banner`, `warningBanner` or `dangerBanner` methods on a redirect response instance:
 
 ```php
 return redirect()->route('subscriptions')->banner('Subscription created successfully.');
+
+return redirect()->route('subscriptions')->warningBanner('Subscription pending approval.');
 
 return redirect()->route('subscriptions')->dangerBanner('Subscription cancellation failed.');
 ```
